@@ -1,0 +1,268 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "process": "Our Process",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Professional Headhunting Services",
+    "title": "The Right Talent",
+    "titleHighlight": "For the Right Role",
+    "subtitle": "Global Career Institute connects companies with exceptional talent. With deep industry expertise and an extensive network, we help your organization grow.",
+    "ctaHire": "Request Recruitment",
+    "ctaApply": "Explore Opportunities"
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "Your Trusted",
+    "titleHighlight": "Search Partner",
+    "description1": "Global Career Institute is a specialized headhunting firm dedicated to connecting businesses with exceptional talent. Backed by deep industry expertise and an extensive talent network, we deliver precise, high-quality matches.",
+    "description2": "We go beyond simple recruitment — we offer true partnership, aligning your company's vision with candidates' career aspirations for lasting success.",
+    "ctaLearnMore": "Learn More",
+    "stat1Value": "500+",
+    "stat1Label": "Successful Placements",
+    "stat2Value": "15+",
+    "stat2Label": "Years of Experience",
+    "stat3Value": "98%",
+    "stat3Label": "Client Satisfaction"
+  },
+  "services": {
+    "badge": "Services",
+    "title": "Professional",
+    "titleHighlight": "Headhunting Services",
+    "subtitle": "We provide tailored solutions by precisely analyzing company requirements and candidate capabilities.",
+    "items": [
+      {
+        "title": "Executive Search",
+        "description": "Strategic identification and recommendation of C-level and senior executive talent including CEO, COO, CFO, and CTO."
+      },
+      {
+        "title": "Mid-Management Recruitment",
+        "description": "Precision sourcing of team leads and professional managers who will drive your core business functions."
+      },
+      {
+        "title": "Career Consulting",
+        "description": "Personalized career guidance analyzing market trends and individual goals to chart the optimal career path."
+      },
+      {
+        "title": "Reference Verification",
+        "description": "Thorough background and reputation checks on candidates to minimize hiring risk and ensure quality placements."
+      }
+    ]
+  },
+  "process": {
+    "badge": "Our Process",
+    "title": "A Systematic and",
+    "titleHighlight": "Transparent Process",
+    "subtitle": "Our proven 6-step process ensures we find the perfect candidate every time.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Requirements Analysis",
+        "description": "We conduct an in-depth analysis of your hiring requirements, company culture, and role specifications."
+      },
+      {
+        "number": "02",
+        "title": "Talent Search",
+        "description": "Leveraging our extensive network and database to actively identify and approach suitable candidates."
+      },
+      {
+        "number": "03",
+        "title": "Candidate Screening",
+        "description": "Multi-stage verification including resume review, in-depth interviews, and competency assessments."
+      },
+      {
+        "number": "04",
+        "title": "Candidate Presentation",
+        "description": "Presenting carefully selected candidates with detailed profiles and evaluation reports."
+      },
+      {
+        "number": "05",
+        "title": "Interview Coordination",
+        "description": "Efficiently coordinating interview schedules and supporting both parties for optimal results."
+      },
+      {
+        "number": "06",
+        "title": "Post-Placement Support",
+        "description": "Ongoing support after placement to ensure successful onboarding and long-term fit."
+      }
+    ],
+    "ctaLearnMore": "Learn More About Our Process"
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Whether you're looking for top talent or your next career opportunity, our expert consultants are here to help.",
+    "ctaContact": "Contact Us",
+    "ctaProcess": "View Our Process"
+  },
+  "footer": {
+    "description": "A specialized headhunting firm connecting businesses with exceptional talent.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "email": "melanie@globalcareer.co.kr",
+    "phone": "+82 (0)10 9428 1134",
+    "address": "Endeavour Tower #106, 45 Seocho-daero 74-gil, Seocho-gu, Seoul",
+    "copyright": "© 2025 Global Career Institute. All rights reserved.",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "process": "Our Process",
+      "contact": "Contact"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "badge": "About Us",
+      "title": "Headhunting Built on",
+      "titleHighlight": "Trust & Expertise",
+      "subtitle": "With over 15 years of experience, we deliver optimal matches between companies and talent."
+    },
+    "profile": {
+      "name": "이복순 Melanie LEE",
+      "title": "Consulting Director / Permanent Placement & Executive Search Division",
+      "bio1": "The lead consultant of Global Career Institute brings over 15 years of headhunting experience, having successfully completed 500+ placements across IT, finance, manufacturing, and bio/healthcare sectors.",
+      "bio2": "Through close partnerships with major Korean and international corporations, a thoroughly verified talent network has been established. We go beyond simple recruitment to deliver talent solutions that align with your strategic growth goals.",
+      "bio3": "We pursue authentic partnership — caring deeply about each candidate's career and each company's future."
+    },
+    "specializations": {
+      "title": "Areas of Specialization",
+      "items": [
+        "IT & Technology",
+        "Finance & Fintech",
+        "Manufacturing & Engineering",
+        "Bio & Healthcare",
+        "Consumer Goods & Retail",
+        "Consulting & Professional Services"
+      ]
+    },
+    "philosophy": {
+      "badge": "Our Philosophy",
+      "title": "The Values",
+      "titleHighlight": "We Stand By",
+      "items": [
+        {
+          "title": "Trust",
+          "description": "We build trust through transparent, honest communication with both companies and candidates."
+        },
+        {
+          "title": "Expertise",
+          "description": "We maintain top-tier expertise through continuous market research and network expansion."
+        },
+        {
+          "title": "Tailored Service",
+          "description": "Rather than a one-size-fits-all approach, we provide personalized service for each client and candidate."
+        },
+        {
+          "title": "Long-term Partnership",
+          "description": "We value long-term relationships and mutual growth over short-term results."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Begin Together?",
+      "subtitle": "Whether you need recruitment services or career advice, we're here for you.",
+      "ctaContact": "Get in Touch"
+    }
+  },
+  "processPage": {
+    "hero": {
+      "badge": "Our Process",
+      "title": "A Proven",
+      "titleHighlight": "6-Step Process",
+      "subtitle": "Our systematic and transparent process delivers optimal outcomes for both companies and candidates."
+    },
+    "steps": [
+      {
+        "number": "01",
+        "title": "Requirements Analysis",
+        "description": "We conduct a thorough analysis of your hiring requirements — discussing role specifications, required competencies, company culture, compensation, and timeline in detail to maximize placement success.",
+        "details": ["Job description analysis", "Culture understanding", "Compensation review", "Timeline planning"]
+      },
+      {
+        "number": "02",
+        "title": "Talent Search & Sourcing",
+        "description": "Using our extensive talent database, industry network, and social channels, we actively source the most suitable candidates for your role.",
+        "details": ["Database search", "Network activation", "Active sourcing", "Market research"]
+      },
+      {
+        "number": "03",
+        "title": "Candidate Screening & Assessment",
+        "description": "Through a multi-stage screening process — from resume review to in-depth interviews — we rigorously assess each candidate's capabilities, experience, and fit.",
+        "details": ["Resume review", "Competency interviews", "Role-fit assessment", "Preliminary references"]
+      },
+      {
+        "number": "04",
+        "title": "Candidate Presentation",
+        "description": "We present carefully selected candidates with detailed evaluation reports, clearly communicating each candidate's strengths and key considerations.",
+        "details": ["Detailed profiles", "Evaluation reports", "Comparative analysis", "Priority recommendations"]
+      },
+      {
+        "number": "05",
+        "title": "Interview Coordination & Support",
+        "description": "We efficiently coordinate interview schedules and support both parties in preparing for the best possible outcome.",
+        "details": ["Schedule coordination", "Candidate prep", "Feedback management", "Outcome communication"]
+      },
+      {
+        "number": "06",
+        "title": "Offer Negotiation & Onboarding",
+        "description": "We support offer negotiations and provide ongoing post-placement support to ensure smooth onboarding and successful long-term integration.",
+        "details": ["Offer support", "Joining confirmation", "Onboarding support", "6-month follow-up"]
+      }
+    ],
+    "cta": {
+      "title": "Ready to Start Hiring?",
+      "subtitle": "Contact us today and our consultants will craft a tailored recruitment solution for your needs.",
+      "ctaContact": "Start Recruitment"
+    }
+  },
+  "contactPage": {
+    "hero": {
+      "badge": "Contact Us",
+      "title": "Let's",
+      "titleHighlight": "Get Started",
+      "subtitle": "Whether it's a recruitment request or career consultation, we welcome any inquiry. We'll respond within 24 hours."
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "emailValue": "melanie@globalcareer.co.kr",
+      "phone": "Phone",
+      "phoneValue": "+82 (0)10 9428 1134",
+      "address": "Address",
+      "addressValue": "Endeavour Tower #106, 45 Seocho-daero 74-gil, Seocho-gu, Seoul",
+      "hours": "Business Hours",
+      "hoursValue": "Mon–Fri, 09:00–18:00"
+    },
+    "form": {
+      "title": "Send a Message",
+      "name": "Full Name",
+      "namePlaceholder": "John Smith",
+      "company": "Company",
+      "companyPlaceholder": "Your Company (optional)",
+      "email": "Email Address",
+      "emailPlaceholder": "example@company.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+82-10-1234-5678 (optional)",
+      "inquiryType": "Inquiry Type",
+      "inquiryTypePlaceholder": "Select an inquiry type",
+      "client": "Corporate Recruitment Request",
+      "candidate": "Job Application / Career Consultation",
+      "message": "Message",
+      "messagePlaceholder": "Please describe your inquiry in detail.",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "successTitle": "Message Received!",
+      "successMessage": "Thank you for your inquiry. Our consultant will get back to you within 24 hours.",
+      "sendAnother": "Send Another Message",
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "inquiryTypeRequired": "Please select an inquiry type.",
+        "messageRequired": "Please enter your message.",
+        "messageMin": "Message must be at least 10 characters."
+      }
+    }
+  }
+}

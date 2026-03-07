@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/tony9/.claude/plans/**)"
+    ]
+  }
+}
