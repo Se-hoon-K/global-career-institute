@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { FadeInUp, StaggerContainer, StaggerItem } from '@/components/ui/animations';
 
 export default function ProcessSection() {
   const t = useTranslations('process');
@@ -9,7 +10,7 @@ export default function ProcessSection() {
     <section className="section-padding bg-navy">
       <div className="container-max">
         {/* Header */}
-        <div className="text-center mb-16">
+        <FadeInUp className="text-center mb-16">
           <div className="inline-flex items-center gap-2 border border-gold/30 rounded-full px-4 py-2 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-gold" />
             <span className="text-gold text-sm font-medium">{t('badge')}</span>
@@ -19,21 +20,20 @@ export default function ProcessSection() {
             <span className="text-gold">{t('titleHighlight')}</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-sm leading-relaxed">{t('subtitle')}</p>
-        </div>
+        </FadeInUp>
 
         {/* Steps grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {steps.map((step, i) => (
-            <div
-              key={i}
-              className="relative p-8 rounded-2xl border border-white/10 bg-white/5 hover:border-gold/30 hover:bg-white/8 transition-all duration-300"
-            >
-              <div className="text-4xl font-bold text-gold/20 mb-4 leading-none">{step.number}</div>
-              <h3 className="font-semibold text-white text-base mb-2">{step.title}</h3>
-              <p className="text-white/40 text-sm leading-relaxed">{step.description}</p>
-            </div>
+            <StaggerItem key={i}>
+              <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 hover:border-gold/30 hover:bg-white/8 transition-all duration-300">
+                <div className="text-4xl font-bold text-gold/20 mb-4 leading-none">{step.number}</div>
+                <h3 className="font-semibold text-white text-base mb-2">{step.title}</h3>
+                <p className="text-white/40 text-sm leading-relaxed">{step.description}</p>
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         <div className="text-center">
           <Link

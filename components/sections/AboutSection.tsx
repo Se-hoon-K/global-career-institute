@@ -1,5 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { FadeInUp, StaggerContainer, StaggerItem } from '@/components/ui/animations';
+import { CountUp } from '@/components/ui/CountUp';
 
 export default function AboutSection() {
   const t = useTranslations('about');
@@ -15,7 +17,7 @@ export default function AboutSection() {
       <div className="container-max">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
-          <div>
+          <FadeInUp>
             <div className="inline-flex items-center gap-2 border border-gold/30 rounded-full px-4 py-2 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-gold" />
               <span className="text-gold text-sm font-medium">{t('badge')}</span>
@@ -39,20 +41,21 @@ export default function AboutSection() {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>
-          </div>
+          </FadeInUp>
 
           {/* Right: Stats */}
-          <div className="grid grid-cols-3 gap-4">
+          <StaggerContainer className="grid grid-cols-3 gap-4">
             {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="text-center p-6 bg-white rounded-2xl shadow-sm border border-navy/5"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-gold mb-2">{stat.value}</div>
-                <div className="text-xs text-navy/50 leading-snug">{stat.label}</div>
-              </div>
+              <StaggerItem key={stat.label}>
+                <div className="text-center p-6 bg-white rounded-2xl shadow-sm border border-navy/5">
+                  <div className="text-3xl md:text-4xl font-bold text-gold mb-2">
+                    <CountUp value={stat.value} />
+                  </div>
+                  <div className="text-xs text-navy/50 leading-snug">{stat.label}</div>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </div>
     </section>

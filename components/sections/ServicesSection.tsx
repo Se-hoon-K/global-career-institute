@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import { FadeInUp, StaggerContainer, StaggerItem } from '@/components/ui/animations';
 
 const serviceIcons = [
   // Executive Search
@@ -33,7 +34,7 @@ export default function ServicesSection() {
     <section className="section-padding bg-white">
       <div className="container-max">
         {/* Header */}
-        <div className="text-center mb-16">
+        <FadeInUp className="text-center mb-16">
           <div className="inline-flex items-center gap-2 border border-gold/30 rounded-full px-4 py-2 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-gold" />
             <span className="text-gold text-sm font-medium">{t('badge')}</span>
@@ -43,14 +44,14 @@ export default function ServicesSection() {
             <span className="text-gold">{t('titleHighlight')}</span>
           </h2>
           <p className="text-navy/50 max-w-xl mx-auto text-sm leading-relaxed">{t('subtitle')}</p>
-        </div>
+        </FadeInUp>
 
         {/* Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((item, i) => (
+            <StaggerItem key={i}>
             <div
-              key={i}
-              className="group p-8 rounded-2xl border border-navy/8 bg-cream hover:border-gold/30 hover:shadow-lg transition-all duration-300"
+              className="group h-full p-8 rounded-2xl border border-navy/8 bg-cream hover:border-gold/30 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-navy flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-navy transition-colors duration-300">
                 {serviceIcons[i]}
@@ -58,8 +59,9 @@ export default function ServicesSection() {
               <h3 className="font-semibold text-navy text-base mb-3">{item.title}</h3>
               <p className="text-navy/50 text-sm leading-relaxed">{item.description}</p>
             </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
