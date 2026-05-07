@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
-const ease = [0.25, 0.4, 0.25, 1];
+const ease = [0.25, 0.4, 0.25, 1] as const;
 
 // Fade in + slide up on scroll
 export function FadeInUp({
