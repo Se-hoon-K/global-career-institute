@@ -18,7 +18,13 @@ export default function HeroSection() {
   const t = useTranslations('hero');
 
   return (
-    <section className="relative min-h-screen flex items-center bg-navy overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* TODO: Replace this div with <Image src="/images/hero.jpg" alt="Hero" fill className="object-cover" priority /> when the image asset is ready */}
+      <div className="absolute inset-0 bg-navy" />
+
+      {/* Dark overlay — ensures text stays readable over the background image */}
+      <div className="absolute inset-0 bg-navy/75" />
+
       {/* Decorative blobs */}
       <div className="absolute top-1/4 right-[-10%] w-[500px] h-[500px] rounded-full bg-gold opacity-5 blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 left-[-10%] w-[400px] h-[400px] rounded-full bg-gold opacity-5 blur-3xl pointer-events-none" />

@@ -1,9 +1,8 @@
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
 import { FadeInUp, StaggerContainer, StaggerItem } from '@/components/ui/animations';
 
-export default function ProcessSection() {
-  const t = useTranslations('process');
+export default function CandidateProcessSection() {
+  const t = useTranslations('candidatePage.process');
   const steps = t.raw('steps') as Array<{ number: string; title: string; description: string }>;
 
   return (
@@ -23,7 +22,7 @@ export default function ProcessSection() {
         </FadeInUp>
 
         {/* Steps grid */}
-        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {steps.map((step, i) => (
             <StaggerItem key={i}>
               <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 hover:border-gold/30 hover:bg-white/8 transition-all duration-300">
@@ -34,18 +33,6 @@ export default function ProcessSection() {
             </StaggerItem>
           ))}
         </StaggerContainer>
-
-        <div className="text-center">
-          <Link
-            href="/candidate"
-            className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:gap-3 transition-all"
-          >
-            {t('ctaLearnMore')}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
       </div>
     </section>
   );

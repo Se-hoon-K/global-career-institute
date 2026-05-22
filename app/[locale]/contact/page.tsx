@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import ContactForm from '@/components/contact/ContactForm';
+import ContactFormSection from '@/components/contact/ContactFormSection';
 
 export default function ContactPage() {
   const t = useTranslations('contactPage');
@@ -90,7 +90,7 @@ export default function ContactPage() {
             </div>
 
             {/* Form */}
-            <ContactForm />
+            <ContactFormSection />
           </div>
         </div>
       </section>

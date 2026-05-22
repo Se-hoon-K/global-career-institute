@@ -2,7 +2,8 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "process": "Our Process",
+    "candidate": "For Candidates",
+    "corporate": "For Companies",
     "contact": "Contact"
   },
   "hero": {
@@ -94,7 +95,7 @@
     "title": "Ready to Get Started?",
     "subtitle": "Whether you're looking for top talent or your next career opportunity, our expert consultants are here to help.",
     "ctaContact": "Contact Us",
-    "ctaProcess": "View Our Process"
+    "ctaCandidate": "For Candidates"
   },
   "footer": {
     "description": "A specialized headhunting firm connecting businesses with exceptional talent.",
@@ -107,7 +108,8 @@
     "nav": {
       "home": "Home",
       "about": "About",
-      "process": "Our Process",
+      "candidate": "For Candidates",
+      "corporate": "For Companies",
       "contact": "Contact"
     }
   },
@@ -263,6 +265,151 @@
         "messageRequired": "Please enter your message.",
         "messageMin": "Message must be at least 10 characters."
       }
+    },
+    "toggle": {
+      "company": "I am a Company",
+      "candidate": "I am a Candidate"
+    },
+    "candidateForm": {
+      "title": "Submit Your Profile",
+      "positionOfInterest": "Position of Interest",
+      "positionPlaceholder": "e.g. Senior Engineer, Finance Manager",
+      "resume": "Resume",
+      "resumeHint": "PDF or DOC/DOCX, max 5MB — we'll auto-fill your details",
+      "resumeButton": "Choose File",
+      "resumeNoFile": "No file chosen",
+      "submit": "Submit Profile",
+      "submitting": "Submitting...",
+      "successTitle": "Profile Received!",
+      "successMessage": "Thank you for submitting your profile. Our consultant will review it and be in touch within 48 hours.",
+      "sendAnother": "Submit Another Profile",
+      "errors": {
+        "nameRequired": "Please enter your name.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "messageRequired": "Please enter a message.",
+        "messageMin": "Message must be at least 10 characters.",
+        "resumeType": "Please upload a PDF or Word document (.doc, .docx).",
+        "resumeSize": "File size must be under 5MB."
+      }
+    }
+  },
+  "candidatePage": {
+    "hero": {
+      "badge": "For Candidates",
+      "title": "Find Your",
+      "titleHighlight": "Next Opportunity",
+      "subtitle": "We connect talented professionals with their ideal roles. Let our expert consultants guide your career journey."
+    },
+    "process": {
+      "badge": "Candidate Process",
+      "title": "Your Path to",
+      "titleHighlight": "Success",
+      "subtitle": "Our 5-step candidate process ensures the best match for your skills and career goals.",
+      "steps": [
+        { "number": "01", "title": "Register Your Profile", "description": "Share your background, career goals, and desired roles with our consultants." },
+        { "number": "02", "title": "Initial Consultation", "description": "A one-on-one session to understand your strengths, preferences, and career aspirations." },
+        { "number": "03", "title": "Job Matching", "description": "We match you with suitable opportunities from our exclusive client network." },
+        { "number": "04", "title": "Interview Preparation", "description": "We prepare you thoroughly for interviews, including company research and coaching." },
+        { "number": "05", "title": "Offer Support", "description": "We support you through offer negotiations and ensure a smooth onboarding experience." }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Take the Next Step?",
+      "subtitle": "Register your profile today and let our consultants find the perfect opportunity for you.",
+      "ctaContact": "Get in Touch"
+    }
+  },
+  "corporatePage": {
+    "hero": {
+      "badge": "For Companies",
+      "title": "Find Exceptional",
+      "titleHighlight": "Talent",
+      "subtitle": "We source, screen, and deliver the best candidates for your organization's critical roles."
+    },
+    "process": {
+      "badge": "Our Process",
+      "title": "A Proven",
+      "titleHighlight": "6-Step Process",
+      "subtitle": "Our systematic approach ensures the right hire every time.",
+      "steps": [
+        { "number": "01", "title": "Requirements Analysis", "description": "We conduct an in-depth analysis of your hiring requirements, company culture, and role specifications.", "details": ["Job description analysis", "Culture understanding", "Compensation review", "Timeline planning"] },
+        { "number": "02", "title": "Talent Search & Sourcing", "description": "Using our extensive talent database, industry network, and social channels, we actively source the most suitable candidates.", "details": ["Database search", "Network activation", "Active sourcing", "Market research"] },
+        { "number": "03", "title": "Candidate Screening", "description": "Through a multi-stage screening process, we rigorously assess each candidate's capabilities, experience, and fit.", "details": ["Resume review", "Competency interviews", "Role-fit assessment", "Preliminary references"] },
+        { "number": "04", "title": "Candidate Presentation", "description": "We present carefully selected candidates with detailed evaluation reports.", "details": ["Detailed profiles", "Evaluation reports", "Comparative analysis", "Priority recommendations"] },
+        { "number": "05", "title": "Interview Coordination", "description": "We efficiently coordinate interview schedules and support both parties for optimal results.", "details": ["Schedule coordination", "Candidate prep", "Feedback management", "Outcome communication"] },
+        { "number": "06", "title": "Offer & Onboarding Support", "description": "We support offer negotiations and provide ongoing post-placement support.", "details": ["Offer support", "Joining confirmation", "Onboarding support", "6-month follow-up"] }
+      ]
+    },
+    "candidates": {
+      "badge": "Our Talent Pool",
+      "title": "Available",
+      "titleHighlight": "Candidates",
+      "subtitle": "Browse our pre-screened talent pool. All candidates have been verified by our expert consultants.",
+      "experience": "yrs exp.",
+      "requestIntro": "Request Introduction"
+    },
+    "cta": {
+      "title": "Ready to Hire?",
+      "subtitle": "Contact us today and our consultants will craft a tailored recruitment solution for your needs.",
+      "ctaContact": "Start Recruitment"
+    }
+  },
+  "jobOpenings": {
+    "badge": "Open Positions",
+    "title": "Current",
+    "titleHighlight": "Opportunities",
+    "subtitle": "Explore our latest executive and professional openings across leading organizations.",
+    "applyButton": "Apply Now",
+    "fullTime": "Full-time",
+    "contract": "Contract",
+    "partTime": "Part-time",
+    "noJobs": "No openings available at the moment. Check back soon.",
+    "viewAll": "View All Positions"
+  },
+  "dashboard": {
+    "title": "GCI Dashboard",
+    "overview": "Overview",
+    "jobs": "Job Openings",
+    "candidates": "Candidates",
+    "stats": {
+      "activeJobs": "Active Jobs",
+      "totalCandidates": "Total Candidates",
+      "placedThisMonth": "Placed This Month",
+      "clientSatisfaction": "Client Satisfaction"
+    },
+    "jobsTable": {
+      "title": "Job Openings",
+      "colTitle": "Position",
+      "colCompany": "Company",
+      "colLocation": "Location",
+      "colType": "Type",
+      "colStatus": "Status",
+      "colPosted": "Posted",
+      "statusActive": "Active",
+      "statusFilled": "Filled",
+      "statusOnHold": "On Hold"
+    },
+    "candidatesTable": {
+      "title": "Candidate Pipeline",
+      "colName": "Candidate",
+      "colRole": "Current Role",
+      "colIndustry": "Industry",
+      "colStatus": "Status",
+      "colApplied": "Applied",
+      "statusScreening": "Screening",
+      "statusInterviewing": "Interviewing",
+      "statusPlaced": "Placed",
+      "statusRejected": "Rejected",
+      "statusOnHold": "On Hold"
+    },
+    "auth": {
+      "title": "GCI Dashboard",
+      "subtitle": "Enter your password to access the dashboard",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter password",
+      "submit": "Access Dashboard",
+      "error": "Incorrect password. Please try again."
     }
   }
 }

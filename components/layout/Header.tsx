@@ -19,13 +19,15 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMobileOpen(false);
   }, [pathname]);
 
   const navLinks = [
     { href: '/', label: t('home') },
     { href: '/about', label: t('about') },
-    { href: '/process', label: t('process') },
+    { href: '/candidate', label: t('candidate') },
+    { href: '/corporate', label: t('corporate') },
     { href: '/contact', label: t('contact') },
   ];
 

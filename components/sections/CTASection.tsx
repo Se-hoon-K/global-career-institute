@@ -25,10 +25,10 @@ export default function CTASection() {
                 {t('ctaContact')}
               </Link>
               <Link
-                href="/process"
+                href="/candidate"
                 className="inline-flex items-center justify-center border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/5 hover:border-white/40 transition-colors text-sm"
               >
-                {t('ctaProcess')}
+                {t('ctaCandidate')}
               </Link>
             </div>
           </div>
