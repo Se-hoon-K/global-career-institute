@@ -11,6 +11,28 @@
     "openMenu": "메뉴 열기",
     "closeMenu": "메뉴 닫기"
   },
+  "homeRedesign": {
+    "hero": {
+      "sectionLabel": "기업 핵심 인재 서치",
+      "title": "공고로 만나기 어려운 인재를 찾습니다.",
+      "description": "임원과 핵심 직무 채용을 위해 시장을 직접 맵핑하고, 후보자의 실제 역량과 이동 가능성까지 깊이 있게 검증합니다.",
+      "primaryCta": "채용 포지션 상담하기",
+      "secondaryCta": "탐색 방식 보기"
+    },
+    "brief": {
+      "title": "Confidential search brief",
+      "sample": "샘플",
+      "reference": "참조 번호",
+      "role": "대상 포지션",
+      "sector": "산업",
+      "scope": "탐색 범위",
+      "status": "진행 상태"
+    },
+    "clients": {
+      "title": "주요 프로젝트 경험",
+      "description": "다양한 조직과 핵심 인재 채용 프로젝트를 수행해 왔습니다. 기업명은 실제 프로젝트 경험에 기반해 표기합니다."
+    }
+  },
   "hero": {
     "badge": "전문 헤드헌팅 서비스",
     "title": "최적의 인재를",

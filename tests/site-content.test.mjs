@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { readFile } from 'node:fs/promises';
 
 import {
   CLIENT_EXPERIENCES,
@@ -45,4 +46,17 @@ test('selects at most three active jobs with featured roles first', () => {
     selectFeaturedJobs(jobs, 3).map((job) => job.id),
     ['new-featured', 'old-featured', 'new-standard'],
   );
+});
+
+test('defines employer-first hero copy in both supported locales', async () => {
+  for (const locale of ['ko', 'en']) {
+    const messages = JSON.parse(
+      await readFile(new URL(`../messages/${locale}.json`, import.meta.url), 'utf8'),
+    );
+
+    assert.equal(typeof messages.homeRedesign.hero.title, 'string');
+    assert.equal(typeof messages.homeRedesign.hero.primaryCta, 'string');
+    assert.equal(typeof messages.homeRedesign.brief.sample, 'string');
+    assert.equal(typeof messages.homeRedesign.clients.title, 'string');
+  }
 });

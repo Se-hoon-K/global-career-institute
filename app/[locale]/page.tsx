@@ -1,4 +1,5 @@
 import HeroSection from '@/components/sections/HeroSection';
+import ClientExperienceSection from '@/components/home/ClientExperienceSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import ProcessSection from '@/components/sections/ProcessSection';
@@ -14,6 +15,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
+      <ClientExperienceSection />
       <AboutSection />
       <ServicesSection />
       <ProcessSection />

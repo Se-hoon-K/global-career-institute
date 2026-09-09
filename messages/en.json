@@ -11,6 +11,28 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
+  "homeRedesign": {
+    "hero": {
+      "sectionLabel": "Search for business-critical talent",
+      "title": "We find the people a job posting cannot reach.",
+      "description": "For executive and business-critical roles, we map the market directly and assess each candidate's capability, motivation, and readiness to move.",
+      "primaryCta": "Discuss a search",
+      "secondaryCta": "See how we search"
+    },
+    "brief": {
+      "title": "Confidential search brief",
+      "sample": "Sample",
+      "reference": "Reference",
+      "role": "Mandate",
+      "sector": "Sector",
+      "scope": "Search scope",
+      "status": "Status"
+    },
+    "clients": {
+      "title": "Selected project experience",
+      "description": "We have delivered critical talent searches across a range of organizations. Names shown reflect confirmed project experience."
+    }
+  },
   "hero": {
     "badge": "Professional Headhunting Services",
     "title": "The Right Talent",
