@@ -177,7 +177,7 @@ export default function CandidateForm() {
       <div className="grid sm:grid-cols-2 gap-5 mb-5">
         {/* Name */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label className="block text-xs font-semibold text-navy/70 mb-2">
             {tForm('name')} <span className="text-gold">*</span>
           </label>
           <input
@@ -193,7 +193,7 @@ export default function CandidateForm() {
 
         {/* Email */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label className="block text-xs font-semibold text-navy/70 mb-2">
             {tForm('email')} <span className="text-gold">*</span>
           </label>
           <input
@@ -215,7 +215,7 @@ export default function CandidateForm() {
 
         {/* Phone */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label className="block text-xs font-semibold text-navy/70 mb-2">
             {tForm('phone')}
           </label>
           <input
@@ -228,7 +228,7 @@ export default function CandidateForm() {
 
         {/* Position of Interest */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label className="block text-xs font-semibold text-navy/70 mb-2">
             {t('positionOfInterest')}
           </label>
           <input
@@ -242,7 +242,7 @@ export default function CandidateForm() {
 
       {/* Message */}
       <div className="mb-5">
-        <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+        <label className="block text-xs font-semibold text-navy/70 mb-2">
           {tForm('message')} <span className="text-gold">*</span>
         </label>
         <textarea
@@ -263,7 +263,7 @@ export default function CandidateForm() {
 
       {/* Resume Upload */}
       <div className="mb-8">
-        <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+        <label className="block text-xs font-semibold text-navy/70 mb-2">
           {t('resume')}
         </label>
         <p className="text-navy/40 text-xs mb-3">{t('resumeHint')}</p>

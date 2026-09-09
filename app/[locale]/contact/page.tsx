@@ -7,24 +7,13 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-navy pt-36 pb-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-        <div className="container-max relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 border border-gold/30 rounded-full px-4 py-2 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-            <span className="text-gold text-sm font-medium">{t('hero.badge')}</span>
-          </div>
+      <section className="bg-navy pt-36 pb-24">
+        <div className="container-max text-center">
+          <p className="text-gold text-sm font-semibold mb-4">{t('hero.badge')}</p>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            {t('hero.title')}{' '}
-            <span className="text-gold">{t('hero.titleHighlight')}</span>
+            {t('hero.title')} {t('hero.titleHighlight')}
           </h1>
-          <p className="text-white/50 max-w-xl mx-auto text-lg leading-relaxed">{t('hero.subtitle')}</p>
+          <p className="text-white/60 max-w-xl mx-auto text-lg leading-relaxed">{t('hero.subtitle')}</p>
         </div>
       </section>
 
@@ -44,7 +33,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-navy/40 uppercase tracking-wider mb-1">{t('info.email')}</p>
+                    <p className="text-xs font-semibold text-navy/40 mb-1">{t('info.email')}</p>
                     <p className="text-navy text-sm font-medium">{t('info.emailValue')}</p>
                   </div>
                 </li>
@@ -56,7 +45,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-navy/40 uppercase tracking-wider mb-1">{t('info.phone')}</p>
+                    <p className="text-xs font-semibold text-navy/40 mb-1">{t('info.phone')}</p>
                     <p className="text-navy text-sm font-medium">{t('info.phoneValue')}</p>
                   </div>
                 </li>
@@ -69,7 +58,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-navy/40 uppercase tracking-wider mb-1">{t('info.address')}</p>
+                    <p className="text-xs font-semibold text-navy/40 mb-1">{t('info.address')}</p>
                     <p className="text-navy text-sm font-medium">{t('info.addressValue')}</p>
                   </div>
                 </li>
@@ -82,7 +71,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-navy/40 uppercase tracking-wider mb-1">{t('info.hours')}</p>
+                    <p className="text-xs font-semibold text-navy/40 mb-1">{t('info.hours')}</p>
                     <p className="text-navy text-sm font-medium">{t('info.hoursValue')}</p>
                   </div>
                 </li>

@@ -15,10 +15,10 @@ export default function JobCard({ job, locale }: { job: Job; locale: string }) {
   const typeLabel = employmentTypeLabels[job.employmentType][isKo ? 'ko' : 'en'];
 
   return (
-    <div className="group flex flex-col h-full p-6 rounded-2xl bg-cream border border-navy/10 hover:border-gold/50 hover:shadow-lg transition-all duration-300">
+    <div className="flex flex-col h-full p-6 rounded-2xl bg-cream border border-navy/10 hover:border-gold/50 transition-colors duration-300">
       {/* Icon + Title */}
       <div className="flex items-start gap-3 mb-4">
-        <div className="shrink-0 w-10 h-10 rounded-xl bg-navy flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-navy transition-colors duration-300">
+        <div className="shrink-0 w-10 h-10 rounded-xl bg-navy flex items-center justify-center text-gold">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
             <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
@@ -53,12 +53,9 @@ export default function JobCard({ job, locale }: { job: Job; locale: string }) {
       <div className="mt-auto">
         <Link
           href={`/contact?type=candidate&job=${job.id}`}
-          className="flex items-center justify-center gap-2 w-full bg-navy text-white text-sm font-semibold px-5 py-3 rounded-lg hover:bg-gold hover:text-navy transition-colors duration-300"
+          className="flex items-center justify-center w-full bg-navy text-white text-sm font-semibold px-5 py-3 rounded-lg hover:bg-gold hover:text-navy transition-colors duration-300"
         >
           {isKo ? '지원하기' : 'Apply Now'}
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
         </Link>
       </div>
     </div>

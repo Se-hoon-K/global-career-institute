@@ -7,12 +7,8 @@ export default function CTASection() {
   return (
     <section className="section-padding bg-cream">
       <div className="container-max">
-        <div className="relative bg-navy rounded-3xl px-8 py-16 md:px-16 text-center overflow-hidden">
-          {/* Decorative */}
-          <div className="absolute top-[-60px] right-[-60px] w-48 h-48 rounded-full bg-gold opacity-10 blur-2xl pointer-events-none" />
-          <div className="absolute bottom-[-60px] left-[-60px] w-48 h-48 rounded-full bg-gold opacity-10 blur-2xl pointer-events-none" />
-
-          <div className="relative z-10">
+        <div className="bg-navy rounded-3xl px-8 py-16 md:px-16 text-center">
+          <div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t('title')}</h2>
             <p className="text-white/50 max-w-xl mx-auto mb-10 text-sm leading-relaxed">
               {t('subtitle')}

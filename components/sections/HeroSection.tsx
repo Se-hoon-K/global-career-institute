@@ -18,46 +18,31 @@ export default function HeroSection() {
   const t = useTranslations('hero');
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* TODO: Replace this div with <Image src="/images/hero.jpg" alt="Hero" fill className="object-cover" priority /> when the image asset is ready */}
-      <div className="absolute inset-0 bg-navy" />
-
-      {/* Dark overlay — ensures text stays readable over the background image */}
-      <div className="absolute inset-0 bg-navy/75" />
-
-      {/* Decorative blobs */}
-      <div className="absolute top-1/4 right-[-10%] w-[500px] h-[500px] rounded-full bg-gold opacity-5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-[-10%] w-[400px] h-[400px] rounded-full bg-gold opacity-5 blur-3xl pointer-events-none" />
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
-
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-navy">
       <div className="container-max relative z-10 pt-32 pb-24">
-        {/* Badge */}
-        <motion.div {...fadeUp(0.1)} className="inline-flex items-center gap-2 border border-gold/30 rounded-full px-4 py-2 mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-          <span className="text-gold text-sm font-medium tracking-wide">{t('badge')}</span>
-        </motion.div>
+        <motion.p
+          {...fadeUp(0.1)}
+          className="text-gold text-sm font-semibold mb-6"
+        >
+          {t('badge')}
+        </motion.p>
 
-        {/* Headline */}
-        <motion.h1 {...fadeUp(0.25)} className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6">
+        <motion.h1
+          {...fadeUp(0.25)}
+          className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6"
+        >
           {t('title')}
           <br />
-          <span className="text-gold">{t('titleHighlight')}</span>
+          {t('titleHighlight')}
         </motion.h1>
 
-        {/* Subtitle */}
-        <motion.p {...fadeUp(0.4)} className="text-white/60 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
+        <motion.p
+          {...fadeUp(0.4)}
+          className="text-white/60 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed"
+        >
           {t('subtitle')}
         </motion.p>
 
-        {/* CTAs */}
         <motion.div {...fadeUp(0.52)} className="flex flex-col sm:flex-row gap-4">
           <Link
             href="/contact"
@@ -74,7 +59,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

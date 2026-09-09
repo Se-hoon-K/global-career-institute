@@ -59,7 +59,7 @@ export default function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-5 mb-5">
         {/* Name */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label className="block text-xs font-semibold text-navy/70 mb-2">
             {t('name')} <span className="text-gold">*</span>
           </label>
           <input
@@ -75,7 +75,7 @@ export default function ContactForm() {
 
         {/* Company */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label className="block text-xs font-semibold text-navy/70 mb-2">
             {t('company')}
           </label>
           <input
@@ -88,7 +88,7 @@ export default function ContactForm() {
 
         {/* Email */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label className="block text-xs font-semibold text-navy/70 mb-2">
             {t('email')} <span className="text-gold">*</span>
           </label>
           <input
@@ -110,7 +110,7 @@ export default function ContactForm() {
 
         {/* Phone */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label className="block text-xs font-semibold text-navy/70 mb-2">
             {t('phone')}
           </label>
           <input
@@ -124,7 +124,7 @@ export default function ContactForm() {
 
       {/* Inquiry Type */}
       <div className="mb-5">
-        <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+        <label className="block text-xs font-semibold text-navy/70 mb-2">
           {t('inquiryType')} <span className="text-gold">*</span>
         </label>
         <select
@@ -145,7 +145,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div className="mb-8">
-        <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+        <label className="block text-xs font-semibold text-navy/70 mb-2">
           {t('message')} <span className="text-gold">*</span>
         </label>
         <textarea

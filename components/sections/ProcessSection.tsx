@@ -11,15 +11,11 @@ export default function ProcessSection() {
       <div className="container-max">
         {/* Header */}
         <FadeInUp className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 border border-gold/30 rounded-full px-4 py-2 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-            <span className="text-gold text-sm font-medium">{t('badge')}</span>
-          </div>
+          <p className="text-gold text-sm font-semibold mb-3">{t('badge')}</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {t('title')}{' '}
-            <span className="text-gold">{t('titleHighlight')}</span>
+            {t('title')} {t('titleHighlight')}
           </h2>
-          <p className="text-white/50 max-w-xl mx-auto text-sm leading-relaxed">{t('subtitle')}</p>
+          <p className="text-white/60 max-w-xl mx-auto text-sm leading-relaxed">{t('subtitle')}</p>
         </FadeInUp>
 
         {/* Steps grid */}
@@ -38,12 +34,9 @@ export default function ProcessSection() {
         <div className="text-center">
           <Link
             href="/candidate"
-            className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:gap-3 transition-all"
+            className="text-gold font-semibold text-sm hover:underline underline-offset-4"
           >
             {t('ctaLearnMore')}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
           </Link>
         </div>
       </div>

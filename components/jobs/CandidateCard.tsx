@@ -14,7 +14,7 @@ export default function CandidateCard({ candidate, locale }: { candidate: Candid
   const visibleSkills = candidate.skills.slice(0, 3);
 
   return (
-    <div className="group flex flex-col h-full p-6 rounded-2xl bg-navy border border-white/8 hover:border-gold/40 hover:shadow-lg transition-all duration-300">
+    <div className="flex flex-col h-full p-6 rounded-2xl bg-navy border border-white/8 hover:border-gold/40 transition-colors duration-300">
       {/* Avatar */}
       <div className="flex flex-col items-center text-center mb-5">
         <div className="w-14 h-14 rounded-full bg-gold flex items-center justify-center mb-3 shrink-0">
@@ -48,12 +48,9 @@ export default function CandidateCard({ candidate, locale }: { candidate: Candid
       <div className="mt-auto">
         <Link
           href="/contact?type=corporate"
-          className="flex items-center justify-center gap-2 w-full border border-gold/40 text-gold text-sm font-semibold px-5 py-3 rounded-lg hover:bg-gold hover:text-navy hover:border-gold transition-colors duration-300"
+          className="flex items-center justify-center w-full border border-gold/40 text-gold text-sm font-semibold px-5 py-3 rounded-lg hover:bg-gold hover:text-navy hover:border-gold transition-colors duration-300"
         >
           {isKo ? '소개 요청하기' : 'Request Introduction'}
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
         </Link>
       </div>
     </div>

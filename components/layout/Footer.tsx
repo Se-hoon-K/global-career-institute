@@ -29,7 +29,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-sm mb-5 text-white/80 uppercase tracking-wider">
+            <h3 className="font-semibold text-sm mb-5 text-white/80">
               {t('quickLinks')}
             </h3>
             <ul className="flex flex-col gap-3">
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-sm mb-5 text-white/80 uppercase tracking-wider">
+            <h3 className="font-semibold text-sm mb-5 text-white/80">
               {t('contactInfo')}
             </h3>
             <ul className="flex flex-col gap-3 text-sm text-white/40">
