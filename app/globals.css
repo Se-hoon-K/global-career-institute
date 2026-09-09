@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Latin UI font — self-hosted so the build never touches Google Fonts. */
+@import "@fontsource-variable/inter";
+
 @theme {
   --color-navy: #0D1B2A;
   --color-navy-light: #1a2e45;
@@ -8,6 +11,9 @@
   --color-gold-light: #e0c068;
   --color-gold-dark: #a8893a;
   --color-cream: #F8F5EF;
+
+  --font-sans: "Inter Variable", "Inter", "Pretendard Variable", Pretendard,
+    "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -16,7 +22,7 @@
   }
 
   body {
-    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+    font-family: var(--font-sans);
     color: #0D1B2A;
     background-color: #ffffff;
   }
