@@ -4,7 +4,12 @@
     "about": "About",
     "candidate": "For Candidates",
     "corporate": "For Companies",
-    "contact": "Contact"
+    "contact": "Contact",
+    "expertise": "Expertise",
+    "process": "How We Search",
+    "consultation": "Start a Search",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "badge": "Professional Headhunting Services",
@@ -104,7 +109,7 @@
     "email": "melanie@globalcareer.co.kr",
     "phone": "+82 (0)10 9428 1134",
     "address": "Endeavour Tower #106, 45 Seocho-daero 74-gil, Seocho-gu, Seoul",
-    "copyright": "© 2025 Global Career Institute. All rights reserved.",
+    "copyright": "© 2026 Global Career Institute. All rights reserved.",
     "nav": {
       "home": "Home",
       "about": "About",

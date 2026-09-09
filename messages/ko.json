@@ -4,7 +4,12 @@
     "about": "회사 소개",
     "candidate": "구직자 서비스",
     "corporate": "기업 서비스",
-    "contact": "문의하기"
+    "contact": "문의하기",
+    "expertise": "전문 분야",
+    "process": "진행 방식",
+    "consultation": "채용 상담",
+    "openMenu": "메뉴 열기",
+    "closeMenu": "메뉴 닫기"
   },
   "hero": {
     "badge": "전문 헤드헌팅 서비스",
@@ -104,7 +109,7 @@
     "email": "melanie@globalcareer.co.kr",
     "phone": "+82 (0)10 9428 1134",
     "address": "서울특별시 서초구 서초대로74길 45, 앤데버타워 #106",
-    "copyright": "© 2025 Global Career Institute. All rights reserved.",
+    "copyright": "© 2026 Global Career Institute. All rights reserved.",
     "nav": {
       "home": "홈",
       "about": "회사 소개",
