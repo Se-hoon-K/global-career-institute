@@ -7,19 +7,21 @@ interface CandidatesTableProps {
 }
 
 const statusStyles: Record<CandidateStatus, string> = {
+  sourced: 'bg-gray-100 text-gray-700',
+  contacted: 'bg-sky-100 text-sky-700',
   screening: 'bg-blue-100 text-blue-700',
   interviewing: 'bg-amber-100 text-amber-700',
+  offer: 'bg-violet-100 text-violet-700',
   placed: 'bg-green-100 text-green-700',
-  rejected: 'bg-red-100 text-red-600',
-  on_hold: 'bg-gray-100 text-gray-600',
 };
 
 const statusLabels: Record<CandidateStatus, string> = {
+  sourced: 'Sourced',
+  contacted: 'Contacted',
   screening: 'Screening',
   interviewing: 'Interviewing',
+  offer: 'Offer',
   placed: 'Placed',
-  rejected: 'Rejected',
-  on_hold: 'On Hold',
 };
 
 function formatDate(dateString: string): string {

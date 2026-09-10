@@ -1,9 +1,12 @@
 export type CandidateStatus =
+  | 'sourced'
+  | 'contacted'
   | 'screening'
   | 'interviewing'
-  | 'placed'
-  | 'rejected'
-  | 'on_hold';
+  | 'offer'
+  | 'placed';
+
+export type CandidateSource = 'Direct search' | 'Referral' | 'Database' | 'Inbound';
 
 export interface Candidate {
   id: string;
@@ -17,6 +20,9 @@ export interface Candidate {
   skills: string[];
   status: CandidateStatus;
   appliedDate: string;
+  lastActivity: string;
+  source: CandidateSource;
+  owner: string;
   jobId?: string;
 }
 
@@ -33,6 +39,9 @@ export const MOCK_CANDIDATES: Candidate[] = [
     skills: ['Java', 'Kubernetes', 'Microservices', 'AWS', 'PostgreSQL'],
     status: 'interviewing',
     appliedDate: '2026-05-02',
+    lastActivity: '2026-09-09',
+    source: 'Direct search',
+    owner: 'Melanie Lee',
     jobId: 'job-001',
   },
   {
@@ -47,6 +56,9 @@ export const MOCK_CANDIDATES: Candidate[] = [
     skills: ['Financial Modeling', 'Excel', 'SAP', 'Bloomberg Terminal', 'SQL'],
     status: 'screening',
     appliedDate: '2026-05-10',
+    lastActivity: '2026-09-10',
+    source: 'Referral',
+    owner: 'Melanie Lee',
     jobId: 'job-002',
   },
   {
@@ -61,6 +73,9 @@ export const MOCK_CANDIDATES: Candidate[] = [
     skills: ['Semiconductor Fabrication', 'Six Sigma', 'FMEA', 'SPC', 'MATLAB'],
     status: 'placed',
     appliedDate: '2026-04-18',
+    lastActivity: '2026-09-05',
+    source: 'Database',
+    owner: 'Melanie Lee',
     jobId: 'job-003',
   },
   {
@@ -75,6 +90,9 @@ export const MOCK_CANDIDATES: Candidate[] = [
     skills: ['ICH-GCP', 'Clinical Monitoring', 'EDC Systems', 'Regulatory Affairs', 'Protocol Development'],
     status: 'interviewing',
     appliedDate: '2026-04-25',
+    lastActivity: '2026-09-08',
+    source: 'Direct search',
+    owner: 'Melanie Lee',
     jobId: 'job-004',
   },
   {
@@ -87,8 +105,11 @@ export const MOCK_CANDIDATES: Candidate[] = [
     experience: '7 years',
     experienceKo: '7년',
     skills: ['Python', 'PyTorch', 'NLP', 'MLOps', 'Docker', 'Transformers'],
-    status: 'screening',
+    status: 'contacted',
     appliedDate: '2026-05-12',
+    lastActivity: '2026-09-10',
+    source: 'Inbound',
+    owner: 'Melanie Lee',
     jobId: 'job-005',
   },
   {
@@ -103,6 +124,9 @@ export const MOCK_CANDIDATES: Candidate[] = [
     skills: ['SAP SCM', 'Demand Planning', 'Logistics', 'ERP', 'Lean Manufacturing'],
     status: 'placed',
     appliedDate: '2026-03-30',
+    lastActivity: '2026-09-02',
+    source: 'Referral',
+    owner: 'Melanie Lee',
     jobId: 'job-006',
   },
   {
@@ -115,8 +139,11 @@ export const MOCK_CANDIDATES: Candidate[] = [
     experience: '3 years',
     experienceKo: '3년',
     skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'GraphQL'],
-    status: 'on_hold',
+    status: 'offer',
     appliedDate: '2026-05-03',
+    lastActivity: '2026-09-09',
+    source: 'Direct search',
+    owner: 'Melanie Lee',
     jobId: 'job-007',
   },
   {
@@ -129,8 +156,11 @@ export const MOCK_CANDIDATES: Candidate[] = [
     experience: '11 years',
     experienceKo: '11년',
     skills: ['Antibody Engineering', 'Cell Culture', 'Flow Cytometry', 'ELISA', 'PCR'],
-    status: 'screening',
+    status: 'sourced',
     appliedDate: '2026-05-09',
+    lastActivity: '2026-09-07',
+    source: 'Database',
+    owner: 'Melanie Lee',
     jobId: 'job-008',
   },
   {
@@ -143,8 +173,11 @@ export const MOCK_CANDIDATES: Candidate[] = [
     experience: '6 years',
     experienceKo: '6년',
     skills: ['M&A', 'DCF Valuation', 'Capital Markets', 'Pitch Decks', 'Due Diligence'],
-    status: 'rejected',
+    status: 'contacted',
     appliedDate: '2026-04-10',
+    lastActivity: '2026-09-06',
+    source: 'Referral',
+    owner: 'Melanie Lee',
   },
   {
     id: 'cand-010',
@@ -156,8 +189,11 @@ export const MOCK_CANDIDATES: Candidate[] = [
     experience: '5 years',
     experienceKo: '5년',
     skills: ['CI/CD', 'Terraform', 'Kubernetes', 'Prometheus', 'Azure DevOps'],
-    status: 'screening',
+    status: 'sourced',
     appliedDate: '2026-05-14',
+    lastActivity: '2026-09-08',
+    source: 'Direct search',
+    owner: 'Melanie Lee',
   },
 ];
 
