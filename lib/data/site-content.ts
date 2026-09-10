@@ -34,8 +34,8 @@ export const SEARCH_BRIEF: SearchBriefData = {
     en: 'Seoul, Tokyo, Singapore',
   },
   status: {
-    ko: '시장 맵핑 중',
-    en: 'Market mapping',
+    ko: '후보군 조사 중',
+    en: 'Talent research in progress',
   },
   isSample: true,
 };

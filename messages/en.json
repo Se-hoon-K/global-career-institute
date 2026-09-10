@@ -31,6 +31,84 @@
     "clients": {
       "title": "Selected project experience",
       "description": "We have delivered critical talent searches across a range of organizations. Names shown reflect confirmed project experience."
+    },
+    "expertise": {
+      "label": "Sector expertise",
+      "title": "The right candidate appears when you understand the market around the role.",
+      "description": "We look beyond matching titles to understand the competitive landscape and the context in which a role must perform.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Luxury & Retail",
+          "description": "We understand brand positioning and distribution models to identify leaders across retail, commercial, and support functions."
+        },
+        {
+          "number": "02",
+          "title": "Industrial & Manufacturing",
+          "description": "We connect the realities of technology, production, supply chain, and sales to find leaders who understand operations and strategy."
+        },
+        {
+          "number": "03",
+          "title": "Corporate & Research",
+          "description": "We assess specialist talent across strategy, research, finance, and people functions that support better decisions."
+        }
+      ]
+    },
+    "process": {
+      "label": "Search process",
+      "title": "Four stages that turn a hiring need into a real candidate.",
+      "description": "We define the role, research the relevant talent pool, assess candidates through direct conversation, and stay involved through joining.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Define the brief",
+          "description": "We align on outcomes, essential capabilities, culture, and the priorities that will guide the search."
+        },
+        {
+          "number": "02",
+          "title": "Research the talent pool",
+          "description": "We identify and approach potential candidates in relevant and adjacent organizations."
+        },
+        {
+          "number": "03",
+          "title": "Assess candidates",
+          "description": "In-depth interviews test the substance of experience, results, motivation, and organizational fit."
+        },
+        {
+          "number": "04",
+          "title": "Offer & onboarding",
+          "description": "We align feedback and expectations, support the offer, and stay close through a successful start."
+        }
+      ]
+    },
+    "consultant": {
+      "label": "Lead consultant",
+      "title": "One accountable consultant, from the first brief to the final outcome.",
+      "name": "Melanie Lee",
+      "role": "Managing Consultant · Global Career Institute",
+      "description": "The same consultant who hears your requirements leads the research, candidate conversations, interviews, and offer alignment. Keeping the context on both sides intact is where a strong hire begins.",
+      "principle": "A strong recommendation starts not with more resumes, but with a clear view of why this person fits the mandate.",
+      "link": "Meet the consultant"
+    },
+    "mandates": {
+      "label": "Open mandates",
+      "title": "Selected searches in progress",
+      "description": "A selection of roles we can share publicly. Client names remain confidential during the search.",
+      "confidential": "Confidential client",
+      "viewAll": "View all opportunities",
+      "apply": "Discuss this role",
+      "employment": {
+        "full-time": "Full-time",
+        "contract": "Contract",
+        "part-time": "Part-time"
+      }
+    },
+    "inquiry": {
+      "eyebrow": "Start a conversation",
+      "title": "Let’s shape your next critical hire.",
+      "description": "You do not need a finished job description. We can start with the role you need and the problem it must solve.",
+      "primaryCta": "Discuss a search",
+      "secondaryCta": "Explore opportunities"
     }
   },
   "hero": {

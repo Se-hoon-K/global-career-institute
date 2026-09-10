@@ -60,3 +60,19 @@ test('defines employer-first hero copy in both supported locales', async () => {
     assert.equal(typeof messages.homeRedesign.clients.title, 'string');
   }
 });
+
+test('defines every homepage search narrative module in both locales', async () => {
+  for (const locale of ['ko', 'en']) {
+    const messages = JSON.parse(
+      await readFile(new URL(`../messages/${locale}.json`, import.meta.url), 'utf8'),
+    );
+    const home = messages.homeRedesign;
+
+    assert.equal(home.expertise.items.length, 3);
+    assert.equal(home.process.steps.length, 4);
+    assert.equal(typeof home.consultant.name, 'string');
+    assert.equal(typeof home.mandates.viewAll, 'string');
+    assert.equal(typeof home.inquiry.primaryCta, 'string');
+    assert.equal(typeof home.inquiry.secondaryCta, 'string');
+  }
+});

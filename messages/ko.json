@@ -15,7 +15,7 @@
     "hero": {
       "sectionLabel": "기업 핵심 인재 서치",
       "title": "공고로 만나기 어려운 인재를 찾습니다.",
-      "description": "임원과 핵심 직무 채용을 위해 시장을 직접 맵핑하고, 후보자의 실제 역량과 이동 가능성까지 깊이 있게 검증합니다.",
+      "description": "임원과 핵심 직무 채용을 위해 동종·인접 업계의 후보군을 직접 조사하고, 후보자의 실제 역량과 이동 가능성까지 깊이 있게 검증합니다.",
       "primaryCta": "채용 포지션 상담하기",
       "secondaryCta": "탐색 방식 보기"
     },
@@ -31,6 +31,84 @@
     "clients": {
       "title": "주요 프로젝트 경험",
       "description": "다양한 조직과 핵심 인재 채용 프로젝트를 수행해 왔습니다. 기업명은 실제 프로젝트 경험에 기반해 표기합니다."
+    },
+    "expertise": {
+      "label": "산업 전문성",
+      "title": "시장 구조를 이해해야 적합한 인재가 보입니다.",
+      "description": "직함만 맞추는 추천이 아니라, 산업의 경쟁 구도와 역할의 맥락까지 살펴 후보자를 찾습니다.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Luxury & Retail",
+          "description": "브랜드 포지셔닝과 유통 구조를 이해하고, 리테일·커머셜·지원 조직의 핵심 인재를 탐색합니다."
+        },
+        {
+          "number": "02",
+          "title": "Industrial & Manufacturing",
+          "description": "기술, 생산, 공급망과 영업 조직의 연결을 읽고 현장과 경영을 함께 이해하는 인재를 찾습니다."
+        },
+        {
+          "number": "03",
+          "title": "Corporate & Research",
+          "description": "전략, 리서치, 재무와 인사 등 기업의 의사결정을 뒷받침하는 전문 인재를 검증합니다."
+        }
+      ]
+    },
+    "process": {
+      "label": "서치 프로세스",
+      "title": "채용 요건을 실제 후보자로 바꾸는 네 단계",
+      "description": "역할을 정확히 정의한 뒤 후보군을 직접 조사하고, 대화와 검증을 거쳐 입사까지 책임 있게 조율합니다.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "요구사항 정의",
+          "description": "성과 목표, 핵심 역량, 조직 문화와 채용 우선순위를 함께 정리합니다."
+        },
+        {
+          "number": "02",
+          "title": "후보군 조사",
+          "description": "동종·인접 업계에서 역할과 경험이 맞는 잠재 후보자를 직접 찾아 접촉합니다."
+        },
+        {
+          "number": "03",
+          "title": "후보자 검증",
+          "description": "경력의 깊이, 실제 성과, 이동 동기와 조직 적합성을 심층 인터뷰로 확인합니다."
+        },
+        {
+          "number": "04",
+          "title": "오퍼 및 온보딩",
+          "description": "면접 피드백과 기대 조건을 조율하고, 합류 이후의 안정적인 정착까지 살핍니다."
+        }
+      ]
+    },
+    "consultant": {
+      "label": "Lead consultant",
+      "title": "한 명의 책임 컨설턴트가 처음부터 끝까지 함께합니다.",
+      "name": "이복순 Melanie Lee",
+      "role": "대표 컨설턴트 · Global Career Institute",
+      "description": "채용 요건을 듣는 첫 미팅부터 후보자 탐색, 인터뷰와 오퍼 조율까지 같은 컨설턴트가 맡습니다. 기업과 후보자 양쪽의 맥락을 놓치지 않는 것이 좋은 채용의 출발점이라고 믿습니다.",
+      "principle": "좋은 추천은 많은 이력서가 아니라, 왜 이 사람이어야 하는지에 대한 분명한 판단에서 시작합니다.",
+      "link": "컨설턴트 소개"
+    },
+    "mandates": {
+      "label": "Open mandates",
+      "title": "현재 진행 중인 주요 포지션",
+      "description": "공개 가능한 진행 포지션 중 일부입니다. 고객사는 채용 기밀을 위해 비공개로 안내합니다.",
+      "confidential": "Confidential client",
+      "viewAll": "전체 포지션 보기",
+      "apply": "포지션 문의",
+      "employment": {
+        "full-time": "정규직",
+        "contract": "계약직",
+        "part-time": "파트타임"
+      }
+    },
+    "inquiry": {
+      "eyebrow": "Start a conversation",
+      "title": "다음 핵심 인재 채용을 함께 설계해 보세요.",
+      "description": "아직 직무기술서가 완성되지 않았어도 괜찮습니다. 필요한 역할과 현재의 고민부터 듣겠습니다.",
+      "primaryCta": "채용 포지션 상담하기",
+      "secondaryCta": "채용 기회 살펴보기"
     }
   },
   "hero": {
