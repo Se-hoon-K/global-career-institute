@@ -19,6 +19,7 @@ const statusStyle: Record<JobStatus, string> = {
 };
 
 export default function SearchPortfolio({ jobs, candidates }: SearchPortfolioProps) {
+  const activeJobs = jobs.filter((job) => job.status === 'active');
   const counts = candidates.reduce((accumulator, candidate) => {
     if (candidate.jobId) accumulator.set(candidate.jobId, (accumulator.get(candidate.jobId) ?? 0) + 1);
     return accumulator;
@@ -35,14 +36,16 @@ export default function SearchPortfolio({ jobs, candidates }: SearchPortfolioPro
       </div>
 
       <ul>
-        {jobs.slice(0, 6).map((job) => (
+        {activeJobs.map((job) => (
           <li key={job.id} className="grid gap-3 border-b border-navy/10 px-5 py-4 last:border-b-0 sm:grid-cols-[1fr_auto] sm:items-center md:px-6">
             <div className="min-w-0">
               <p className="truncate text-sm font-semibold text-navy">{job.title}</p>
               <p className="mt-1 truncate text-xs text-ink/55">{job.company} · {job.location}</p>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-xs text-ink/55">{counts.get(job.id) ?? 0} candidates</span>
+              <span className="text-xs text-ink/55">
+                {counts.get(job.id) ?? 0} {(counts.get(job.id) ?? 0) === 1 ? 'candidate' : 'candidates'}
+              </span>
               <span className={`px-2 py-1 text-[0.68rem] font-semibold ${statusStyle[job.status]}`}>{statusLabel[job.status]}</span>
             </div>
           </li>
