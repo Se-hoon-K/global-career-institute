@@ -48,3 +48,10 @@ test('active inquiry forms expose explicit label bindings and avoid watch-based 
   }
   assert.doesNotMatch(candidate, /\bwatch\b/);
 });
+
+test('candidate opportunity links open the candidate inquiry form', async () => {
+  const section = await source('components/contact/ContactFormSection.tsx');
+
+  assert.match(section, /useSearchParams/);
+  assert.match(section, /get\('type'\) === 'candidate'/);
+});

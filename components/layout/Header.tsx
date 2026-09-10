@@ -53,6 +53,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setMobileOpen(false)}
                 className={`text-[13px] font-medium transition-colors ${
                   isActive(link.href) ? 'text-gold-light' : 'text-white/70 hover:text-white'
                 }`}
@@ -120,6 +121,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setMobileOpen(false)}
                 className={`border-b border-white/10 px-1 py-3.5 text-sm font-medium transition-colors ${
                   isActive(link.href) ? 'text-gold-light' : 'text-white/70 hover:text-white'
                 }`}
@@ -127,7 +129,7 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/contact" className="mt-4 flex justify-center rounded-md bg-gold px-5 py-3.5 text-sm font-semibold text-navy">
+            <Link href="/contact" onClick={() => setMobileOpen(false)} className="mt-4 flex justify-center rounded-md bg-gold px-5 py-3.5 text-sm font-semibold text-navy">
               {t('consultation')}
             </Link>
           </nav>

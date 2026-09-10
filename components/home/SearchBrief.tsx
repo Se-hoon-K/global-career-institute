@@ -39,12 +39,11 @@ export default function SearchBrief({
         )}
       </div>
 
-      <div className="grid grid-cols-[7rem_1fr] border-b border-navy/15 py-5 text-sm">
-        <dt className="text-ink/60">{labels.reference}</dt>
-        <dd className="font-semibold">{data.id}</dd>
-      </div>
-
       <dl>
+        <div className="grid grid-cols-[7rem_1fr] border-b border-navy/15 py-5 text-sm">
+          <dt className="text-ink/60">{labels.reference}</dt>
+          <dd className="font-semibold">{data.id}</dd>
+        </div>
         {fields.map((field) => (
           <div key={field.label} className="grid gap-1 border-b border-navy/10 py-5 sm:grid-cols-[7rem_1fr] sm:gap-0">
             <dt className="text-xs font-medium text-ink/60">{field.label}</dt>
