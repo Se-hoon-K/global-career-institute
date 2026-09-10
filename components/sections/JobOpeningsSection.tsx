@@ -1,36 +1,50 @@
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { Job } from '@/lib/data/jobs';
-import JobCard from '@/components/jobs/JobCard';
-import { FadeInUp, StaggerContainer, StaggerItem } from '@/components/ui/animations';
 
 export default function JobOpeningsSection({ jobs, locale }: { jobs: Job[]; locale: string }) {
   const t = useTranslations('jobOpenings');
+  const isKo = locale === 'ko';
+  const typeLabels: Record<Job['employmentType'], string> = {
+    'full-time': t('fullTime'),
+    contract: t('contract'),
+    'part-time': t('partTime'),
+  };
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-max">
-        {/* Header */}
-        <FadeInUp className="text-center mb-16">
-          <p className="text-gold text-sm font-semibold mb-3">{t('badge')}</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-            {t('title')} {t('titleHighlight')}
-          </h2>
-          <p className="text-navy/60 max-w-xl mx-auto text-sm leading-relaxed">{t('subtitle')}</p>
-        </FadeInUp>
+    <section className="bg-cream" aria-labelledby="job-openings-title">
+      <div className="container-max py-20 md:py-28">
+        <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <p className="text-sm font-semibold tracking-[0.12em] text-gold-dark uppercase">{t('badge')}</p>
+            <h2 id="job-openings-title" className="text-balance mt-5 text-3xl font-bold tracking-[-0.03em] text-navy md:text-5xl">
+              {t('title')} {t('titleHighlight')}
+            </h2>
+          </div>
+          <p className="max-w-lg text-sm leading-7 text-ink/70 lg:col-span-4 lg:col-start-9">{t('subtitle')}</p>
+        </div>
 
-        {/* Grid or empty state */}
         {jobs.length === 0 ? (
-          <FadeInUp className="text-center py-16">
-            <p className="text-navy/40 text-sm">{t('noJobs')}</p>
-          </FadeInUp>
+          <p className="mt-14 border-y border-navy/20 py-12 text-sm text-ink/60">{t('noJobs')}</p>
         ) : (
-          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ul className="mt-14 border-t border-navy/20">
             {jobs.map((job) => (
-              <StaggerItem key={job.id}>
-                <JobCard job={job} locale={locale} />
-              </StaggerItem>
+              <li key={job.id} className="border-b border-navy/20">
+                <Link href={`/contact?type=candidate&job=${job.id}`} className="group grid gap-4 py-7 transition-colors hover:bg-white/55 sm:grid-cols-[1fr_auto] sm:items-center sm:px-4 md:py-8">
+                  <div>
+                    <p className="text-xs font-semibold tracking-[0.08em] text-gold-dark uppercase">{job.company}</p>
+                    <h3 className="mt-2 text-xl font-bold tracking-[-0.02em] text-navy md:text-2xl">{isKo ? job.titleKo : job.title}</h3>
+                    <p className="mt-3 text-sm text-ink/65">
+                      {isKo ? job.locationKo : job.location} · {isKo ? job.industryKo : job.industry} · {typeLabels[job.employmentType]}
+                    </p>
+                  </div>
+                  <span className="flex items-center gap-3 text-sm font-semibold text-navy">
+                    {t('applyButton')}<span className="text-gold-dark transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                  </span>
+                </Link>
+              </li>
             ))}
-          </StaggerContainer>
+          </ul>
         )}
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import PageIntro from '@/components/ui/PageIntro';
+import InquiryBand from '@/components/ui/InquiryBand';
 
 export default function AboutPage() {
   const t = useTranslations('aboutPage');
@@ -8,104 +9,67 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-navy pt-36 pb-24">
-        <div className="container-max text-center">
-          <p className="text-gold text-sm font-semibold mb-4">{t('hero.badge')}</p>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            {t('hero.title')}
-            <br />
-            {t('hero.titleHighlight')}
-          </h1>
-          <p className="text-white/60 max-w-xl mx-auto text-lg leading-relaxed">{t('hero.subtitle')}</p>
-        </div>
-      </section>
+      <PageIntro
+        sectionLabel={t('hero.badge')}
+        title={`${t('hero.title')} ${t('hero.titleHighlight')}`}
+        summary={t('hero.subtitle')}
+      />
 
-      {/* Profile */}
-      <section className="section-padding bg-cream">
-        <div className="container-max">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Photo placeholder */}
-            <div className="rounded-2xl overflow-hidden bg-navy/10 aspect-[4/5] flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-24 h-24 rounded-full bg-navy/20 flex items-center justify-center mx-auto mb-4">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-navy/40">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </div>
-                <p className="text-navy/30 text-sm">Photo</p>
-              </div>
+      <section className="bg-cream" aria-labelledby="profile-title">
+        <div className="container-max grid gap-12 py-20 md:py-28 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="text-sm font-semibold tracking-[0.12em] text-gold-dark uppercase">Lead consultant</p>
+            <h2 id="profile-title" className="mt-5 text-3xl font-bold tracking-[-0.03em] text-navy md:text-4xl">
+              {t('profile.name')}
+            </h2>
+            <p className="mt-3 max-w-sm text-sm leading-6 font-medium text-gold-dark">{t('profile.title')}</p>
+          </div>
+
+          <div className="lg:col-span-7 lg:col-start-6">
+            <div className="space-y-5 border-t border-navy/20 pt-8 text-sm leading-8 text-ink/75 md:text-base">
+              <p>{t('profile.bio1')}</p>
+              <p>{t('profile.bio2')}</p>
+              <p>{t('profile.bio3')}</p>
             </div>
 
-            {/* Bio */}
-            <div className="py-4">
-              <h2 className="text-2xl font-bold text-navy mb-1">{t('profile.name')}</h2>
-              <p className="text-gold font-medium text-sm mb-6">{t('profile.title')}</p>
-              <div className="flex flex-col gap-4 mb-8">
-                <p className="text-navy/60 leading-relaxed text-sm">{t('profile.bio1')}</p>
-                <p className="text-navy/60 leading-relaxed text-sm">{t('profile.bio2')}</p>
-                <p className="text-navy/60 leading-relaxed text-sm">{t('profile.bio3')}</p>
-              </div>
-
-              {/* Specializations */}
-              <div>
-                <h3 className="font-semibold text-navy text-sm mb-4">{t('specializations.title')}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {specItems.map((item) => (
-                    <span
-                      key={item}
-                      className="px-3 py-1.5 bg-navy text-white text-xs rounded-full font-medium"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className="mt-12">
+              <h3 className="text-sm font-bold text-navy">{t('specializations.title')}</h3>
+              <ul className="mt-5 grid border-t border-navy/15 sm:grid-cols-2">
+                {specItems.map((item, index) => (
+                  <li key={item} className="flex items-center gap-3 border-b border-navy/15 py-4 text-sm font-semibold text-navy sm:pr-5 even:sm:pl-5">
+                    <span className="font-mono text-[0.65rem] text-gold-dark">{String(index + 1).padStart(2, '0')}</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <div className="text-center mb-14">
-            <p className="text-gold text-sm font-semibold mb-3">{t('philosophy.badge')}</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy">
+      <section className="bg-white" aria-labelledby="philosophy-title">
+        <div className="container-max grid gap-12 py-20 md:py-28 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="text-sm font-semibold tracking-[0.12em] text-gold-dark uppercase">{t('philosophy.badge')}</p>
+            <h2 id="philosophy-title" className="text-balance mt-5 text-3xl font-bold tracking-[-0.03em] text-navy md:text-4xl">
               {t('philosophy.title')} {t('philosophy.titleHighlight')}
             </h2>
           </div>
-
-          <div className="grid sm:grid-cols-2 gap-6">
-            {philosophyItems.map((item, i) => (
-              <div key={i} className="p-8 rounded-2xl border border-navy/8 bg-cream">
-                <div className="w-10 h-10 rounded-lg bg-navy flex items-center justify-center text-gold text-sm font-bold mb-5">
-                  {String(i + 1).padStart(2, '0')}
+          <ol className="border-t border-navy/20 lg:col-span-7 lg:col-start-6">
+            {philosophyItems.map((item, index) => (
+              <li key={item.title} className="grid gap-3 border-b border-navy/20 py-7 sm:grid-cols-[3rem_1fr]">
+                <span className="font-mono text-xs font-semibold text-gold-dark">{String(index + 1).padStart(2, '0')}</span>
+                <div>
+                  <h3 className="text-lg font-bold text-navy">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-ink/70">{item.description}</p>
                 </div>
-                <h3 className="font-semibold text-navy text-lg mb-3">{item.title}</h3>
-                <p className="text-navy/50 text-sm leading-relaxed">{item.description}</p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-cream">
-        <div className="container-max">
-          <div className="bg-navy rounded-3xl px-8 py-16 md:px-16 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">{t('cta.title')}</h2>
-            <p className="text-white/60 max-w-md mx-auto mb-8 text-sm leading-relaxed">{t('cta.subtitle')}</p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-gold text-navy font-semibold px-8 py-4 rounded-lg hover:bg-gold-light transition-colors text-sm"
-            >
-              {t('cta.ctaContact')}
-            </Link>
-          </div>
-        </div>
-      </section>
+      <InquiryBand title={t('cta.title')} description={t('cta.subtitle')} primaryLabel={t('cta.ctaContact')} />
     </>
   );
 }
