@@ -1,51 +1,40 @@
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
-import { FadeInUp, StaggerContainer, StaggerItem } from '@/components/ui/animations';
+
+interface SearchStep {
+  number: string;
+  title: string;
+  description: string;
+}
 
 export default function ProcessSection() {
-  const t = useTranslations('process');
-  const steps = t.raw('steps') as Array<{ number: string; title: string; description: string }>;
+  const t = useTranslations('homeRedesign.process');
+  const steps = t.raw('steps') as SearchStep[];
 
   return (
-    <section className="section-padding bg-navy">
-      <div className="container-max">
-        {/* Header */}
-        <FadeInUp className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 border border-gold/30 rounded-full px-4 py-2 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-            <span className="text-gold text-sm font-medium">{t('badge')}</span>
+    <section id="process" className="scroll-mt-20 bg-navy text-white" aria-labelledby="process-title">
+      <div className="container-max py-20 md:py-28">
+        <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <p className="text-sm font-semibold tracking-[0.14em] text-gold-light uppercase">{t('label')}</p>
+            <h2 id="process-title" className="text-balance mt-5 max-w-3xl text-3xl leading-tight font-bold tracking-[-0.035em] md:text-5xl">
+              {t('title')}
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {t('title')}{' '}
-            <span className="text-gold">{t('titleHighlight')}</span>
-          </h2>
-          <p className="text-white/50 max-w-xl mx-auto text-sm leading-relaxed">{t('subtitle')}</p>
-        </FadeInUp>
-
-        {/* Steps grid */}
-        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {steps.map((step, i) => (
-            <StaggerItem key={i}>
-              <div className="relative p-8 rounded-2xl border border-white/10 bg-white/5 hover:border-gold/30 hover:bg-white/8 transition-all duration-300">
-                <div className="text-4xl font-bold text-gold/20 mb-4 leading-none">{step.number}</div>
-                <h3 className="font-semibold text-white text-base mb-2">{step.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">{step.description}</p>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-
-        <div className="text-center">
-          <Link
-            href="/candidate"
-            className="inline-flex items-center gap-2 text-gold font-semibold text-sm hover:gap-3 transition-all"
-          >
-            {t('ctaLearnMore')}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
+          <p className="max-w-lg text-sm leading-7 text-white/65 lg:col-span-4 lg:col-start-9">{t('description')}</p>
         </div>
+
+        <ol className="mt-16 grid border-t border-white/20 md:grid-cols-2 xl:grid-cols-4">
+          {steps.map((step, index) => (
+            <li key={step.number} className="relative border-b border-white/20 py-8 md:min-h-72 md:border-r md:px-7 xl:border-b-0 first:md:pl-0 last:md:border-r-0 last:xl:pr-0">
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-xs font-semibold text-gold-light">{step.number}</span>
+                {index < steps.length - 1 && <span className="h-px flex-1 bg-white/15" aria-hidden="true" />}
+              </div>
+              <h3 className="mt-14 text-xl font-bold tracking-[-0.02em]">{step.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-white/60">{step.description}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

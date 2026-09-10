@@ -4,7 +4,112 @@
     "about": "About",
     "candidate": "For Candidates",
     "corporate": "For Companies",
-    "contact": "Contact"
+    "contact": "Contact",
+    "expertise": "Expertise",
+    "process": "How We Search",
+    "consultation": "Start a Search",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "homeRedesign": {
+    "hero": {
+      "sectionLabel": "Search for business-critical talent",
+      "title": "We find the people a job posting cannot reach.",
+      "description": "For executive and business-critical roles, we map the market directly and assess each candidate's capability, motivation, and readiness to move.",
+      "primaryCta": "Discuss a search",
+      "secondaryCta": "See how we search"
+    },
+    "brief": {
+      "title": "Confidential search brief",
+      "sample": "Sample",
+      "reference": "Reference",
+      "role": "Mandate",
+      "sector": "Sector",
+      "scope": "Search scope",
+      "status": "Status"
+    },
+    "clients": {
+      "title": "Selected project experience",
+      "description": "We have delivered critical talent searches across a range of organizations. Names shown reflect confirmed project experience."
+    },
+    "expertise": {
+      "label": "Sector expertise",
+      "title": "The right candidate appears when you understand the market around the role.",
+      "description": "We look beyond matching titles to understand the competitive landscape and the context in which a role must perform.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Luxury & Retail",
+          "description": "We understand brand positioning and distribution models to identify leaders across retail, commercial, and support functions."
+        },
+        {
+          "number": "02",
+          "title": "Industrial & Manufacturing",
+          "description": "We connect the realities of technology, production, supply chain, and sales to find leaders who understand operations and strategy."
+        },
+        {
+          "number": "03",
+          "title": "Corporate & Research",
+          "description": "We assess specialist talent across strategy, research, finance, and people functions that support better decisions."
+        }
+      ]
+    },
+    "process": {
+      "label": "Search process",
+      "title": "Four stages that turn a hiring need into a real candidate.",
+      "description": "We define the role, research the relevant talent pool, assess candidates through direct conversation, and stay involved through joining.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Define the brief",
+          "description": "We align on outcomes, essential capabilities, culture, and the priorities that will guide the search."
+        },
+        {
+          "number": "02",
+          "title": "Research the talent pool",
+          "description": "We identify and approach potential candidates in relevant and adjacent organizations."
+        },
+        {
+          "number": "03",
+          "title": "Assess candidates",
+          "description": "In-depth interviews test the substance of experience, results, motivation, and organizational fit."
+        },
+        {
+          "number": "04",
+          "title": "Offer & onboarding",
+          "description": "We align feedback and expectations, support the offer, and stay close through a successful start."
+        }
+      ]
+    },
+    "consultant": {
+      "label": "Lead consultant",
+      "title": "One accountable consultant, from the first brief to the final outcome.",
+      "name": "Melanie Lee",
+      "role": "Managing Consultant · Global Career Institute",
+      "description": "The same consultant who hears your requirements leads the research, candidate conversations, interviews, and offer alignment. Keeping the context on both sides intact is where a strong hire begins.",
+      "principle": "A strong recommendation starts not with more resumes, but with a clear view of why this person fits the mandate.",
+      "link": "Meet the consultant"
+    },
+    "mandates": {
+      "label": "Open mandates",
+      "title": "Selected searches in progress",
+      "description": "A selection of roles we can share publicly. Client names remain confidential during the search.",
+      "confidential": "Confidential client",
+      "viewAll": "View all opportunities",
+      "apply": "Discuss this role",
+      "employment": {
+        "full-time": "Full-time",
+        "contract": "Contract",
+        "part-time": "Part-time"
+      }
+    },
+    "inquiry": {
+      "eyebrow": "Start a conversation",
+      "title": "Let’s shape your next critical hire.",
+      "description": "You do not need a finished job description. We can start with the role you need and the problem it must solve.",
+      "primaryCta": "Discuss a search",
+      "secondaryCta": "Explore opportunities"
+    }
   },
   "hero": {
     "badge": "Professional Headhunting Services",
@@ -104,7 +209,7 @@
     "email": "melanie@globalcareer.co.kr",
     "phone": "+82 (0)10 9428 1134",
     "address": "Endeavour Tower #106, 45 Seocho-daero 74-gil, Seocho-gu, Seoul",
-    "copyright": "© 2025 Global Career Institute. All rights reserved.",
+    "copyright": "© 2026 Global Career Institute. All rights reserved.",
     "nav": {
       "home": "Home",
       "about": "About",
@@ -118,13 +223,13 @@
       "badge": "About Us",
       "title": "Headhunting Built on",
       "titleHighlight": "Trust & Expertise",
-      "subtitle": "With over 15 years of experience, we deliver optimal matches between companies and talent."
+      "subtitle": "Meet an accountable search partner who takes the time to understand both a critical hire and a candidate's next move."
     },
     "profile": {
       "name": "이복순 Melanie LEE",
       "title": "Consulting Director / Permanent Placement & Executive Search Division",
-      "bio1": "The lead consultant of Global Career Institute brings over 15 years of headhunting experience, having successfully completed 500+ placements across IT, finance, manufacturing, and bio/healthcare sectors.",
-      "bio2": "Through close partnerships with major Korean and international corporations, a thoroughly verified talent network has been established. We go beyond simple recruitment to deliver talent solutions that align with your strategic growth goals.",
+      "bio1": "Global Career Institute begins each search by understanding why the role exists and what it must achieve. We do not assess people by job titles or resume keywords alone.",
+      "bio2": "Experience across critical searches for Korean and international organizations informs direct talent research and in-depth interviews that support better hiring decisions.",
       "bio3": "We pursue authentic partnership — caring deeply about each candidate's career and each company's future."
     },
     "specializations": {
@@ -223,7 +328,7 @@
       "badge": "Contact Us",
       "title": "Let's",
       "titleHighlight": "Get Started",
-      "subtitle": "Whether it's a recruitment request or career consultation, we welcome any inquiry. We'll respond within 24 hours."
+      "subtitle": "Share a hiring need or career question with us. We will review the context and help clarify the most useful next step."
     },
     "info": {
       "title": "Contact Information",

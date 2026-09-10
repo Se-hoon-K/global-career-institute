@@ -1,9 +1,8 @@
-import { getTranslations, getLocale } from 'next-intl/server';
-import PageHero from '@/components/ui/PageHero';
+import { getLocale, getTranslations } from 'next-intl/server';
+import PageIntro from '@/components/ui/PageIntro';
+import InquiryBand from '@/components/ui/InquiryBand';
 import CandidateProcessSection from '@/components/sections/CandidateProcessSection';
-import ServicesSection from '@/components/sections/ServicesSection';
 import JobOpeningsSection from '@/components/sections/JobOpeningsSection';
-import CTASection from '@/components/sections/CTASection';
 import { getJobs } from '@/lib/data/jobs';
 
 export default async function CandidatePage() {
@@ -13,16 +12,18 @@ export default async function CandidatePage() {
 
   return (
     <>
-      <PageHero
-        badge={t('hero.badge')}
-        title={t('hero.title')}
-        titleHighlight={t('hero.titleHighlight')}
-        subtitle={t('hero.subtitle')}
+      <PageIntro
+        sectionLabel={t('hero.badge')}
+        title={`${t('hero.title')} ${t('hero.titleHighlight')}`}
+        summary={t('hero.subtitle')}
       />
-      <CandidateProcessSection />
-      <ServicesSection />
       <JobOpeningsSection jobs={jobs} locale={locale} />
-      <CTASection />
+      <CandidateProcessSection />
+      <InquiryBand
+        title={t('cta.title')}
+        description={t('cta.subtitle')}
+        primaryLabel={t('cta.ctaContact')}
+      />
     </>
   );
 }

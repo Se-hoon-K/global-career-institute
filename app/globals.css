@@ -1,38 +1,117 @@
 @import "tailwindcss";
 
+/* Latin UI font — self-hosted so the build never touches Google Fonts. */
+@import "@fontsource-variable/inter";
+
 @theme {
-  --color-navy: #0D1B2A;
-  --color-navy-light: #1a2e45;
-  --color-navy-dark: #081016;
-  --color-gold: #C9A84C;
-  --color-gold-light: #e0c068;
-  --color-gold-dark: #a8893a;
-  --color-cream: #F8F5EF;
+  --color-navy: #0b1e2d;
+  --color-navy-light: #183044;
+  --color-navy-dark: #07131d;
+  --color-gold: #b48b2c;
+  --color-gold-light: #d5b75d;
+  --color-gold-dark: #765b12;
+  --color-cream: #f3f5f4;
+  --color-ink: #24323c;
+  --color-mist: #d9dfdc;
+
+  --font-sans: "Inter Variable", "Inter", "Pretendard Variable", Pretendard,
+    "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {
-    font-family: 'Inter', 'Noto Sans KR', sans-serif;
-    color: #0D1B2A;
+    font-family: var(--font-sans);
+    color: #0b1e2d;
     background-color: #ffffff;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    color: #ffffff;
+    background: #765b12;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    outline-offset: 4px;
+  }
+
+  :focus-visible {
+    outline: 2px solid #b48b2c;
   }
 }
 
 @layer utilities {
   .section-padding {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   .container-max {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .search-brief-enter {
+    animation: search-brief-enter 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @media (max-width: 640px) {
+    .section-padding {
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+    }
+
+    .container-max {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@keyframes search-brief-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) rotate(0.5deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
   }
 }

@@ -1,24 +1,32 @@
 import HeroSection from '@/components/sections/HeroSection';
-import AboutSection from '@/components/sections/AboutSection';
-import ServicesSection from '@/components/sections/ServicesSection';
+import ClientExperienceSection from '@/components/home/ClientExperienceSection';
+import ExpertiseSection from '@/components/sections/ExpertiseSection';
 import ProcessSection from '@/components/sections/ProcessSection';
-import JobOpeningsSection from '@/components/sections/JobOpeningsSection';
-import CTASection from '@/components/sections/CTASection';
+import ConsultantSection from '@/components/sections/ConsultantSection';
+import FeaturedMandatesSection from '@/components/sections/FeaturedMandatesSection';
+import InquiryBand from '@/components/ui/InquiryBand';
 import { getJobs } from '@/lib/data/jobs';
-import { getLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 export default async function HomePage() {
   const jobs = await getJobs('active');
   const locale = await getLocale();
+  const t = await getTranslations('homeRedesign.inquiry');
 
   return (
     <>
       <HeroSection />
-      <AboutSection />
-      <ServicesSection />
+      <ClientExperienceSection />
+      <ExpertiseSection />
       <ProcessSection />
-      <JobOpeningsSection jobs={jobs} locale={locale} />
-      <CTASection />
+      <ConsultantSection />
+      <FeaturedMandatesSection jobs={jobs} locale={locale} />
+      <InquiryBand
+        title={t('title')}
+        description={t('description')}
+        primaryLabel={t('primaryCta')}
+        secondaryLabel={t('secondaryCta')}
+      />
     </>
   );
 }

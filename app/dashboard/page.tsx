@@ -52,7 +52,7 @@ export default function DashboardPage() {
 
           <form onSubmit={handleLogin} className="flex flex-col gap-4">
             <div>
-              <label htmlFor="password" className="block text-xs font-semibold text-navy/60 uppercase tracking-wider mb-1.5">
+              <label htmlFor="password" className="block text-xs font-semibold text-navy/60 mb-1.5">
                 Password
               </label>
               <input

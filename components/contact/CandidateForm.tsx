@@ -79,7 +79,7 @@ export default function CandidateForm() {
     register,
     handleSubmit,
     reset,
-    watch,
+    getValues,
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<FormData>();
@@ -91,9 +91,9 @@ export default function CandidateForm() {
     try {
       const text = await extractResumeText(file);
       const parsed = parseResumeText(text);
-      if (parsed.name && !watch('name')) setValue('name', parsed.name, { shouldValidate: false });
-      if (parsed.email && !watch('email')) setValue('email', parsed.email, { shouldValidate: false });
-      if (parsed.phone && !watch('phone')) setValue('phone', parsed.phone, { shouldValidate: false });
+      if (parsed.name && !getValues('name')) setValue('name', parsed.name, { shouldValidate: false });
+      if (parsed.email && !getValues('email')) setValue('email', parsed.email, { shouldValidate: false });
+      if (parsed.phone && !getValues('phone')) setValue('phone', parsed.phone, { shouldValidate: false });
     } catch {
       // Silently fail — auto-fill is a nice-to-have
     }
@@ -171,33 +171,39 @@ export default function CandidateForm() {
   });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-cream rounded-2xl border border-navy/8 p-8 md:p-10">
+    <form onSubmit={handleSubmit(onSubmit)} className="border-t border-navy/20 bg-cream p-6 sm:p-8 md:p-10">
       <h2 className="text-xl font-bold text-navy mb-8">{t('title')}</h2>
 
       <div className="grid sm:grid-cols-2 gap-5 mb-5">
         {/* Name */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label htmlFor="candidate-name" className="block text-xs font-semibold text-navy/70 mb-2">
             {tForm('name')} <span className="text-gold">*</span>
           </label>
           <input
+            id="candidate-name"
             type="text"
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby={errors.name ? 'candidate-name-error' : undefined}
             placeholder={tForm('namePlaceholder')}
             className={`w-full px-4 py-3 rounded-lg border bg-white text-navy text-sm placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-shadow ${
               errors.name ? 'border-red-400' : 'border-navy/15'
             }`}
             {...register('name', { required: t('errors.nameRequired') })}
           />
-          {errors.name && <p className="text-red-500 text-xs mt-1.5">{errors.name.message}</p>}
+          {errors.name && <p id="candidate-name-error" className="text-red-500 text-xs mt-1.5">{errors.name.message}</p>}
         </div>
 
         {/* Email */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label htmlFor="candidate-email" className="block text-xs font-semibold text-navy/70 mb-2">
             {tForm('email')} <span className="text-gold">*</span>
           </label>
           <input
+            id="candidate-email"
             type="email"
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={errors.email ? 'candidate-email-error' : undefined}
             placeholder={tForm('emailPlaceholder')}
             className={`w-full px-4 py-3 rounded-lg border bg-white text-navy text-sm placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-shadow ${
               errors.email ? 'border-red-400' : 'border-navy/15'
@@ -210,15 +216,16 @@ export default function CandidateForm() {
               },
             })}
           />
-          {errors.email && <p className="text-red-500 text-xs mt-1.5">{errors.email.message}</p>}
+          {errors.email && <p id="candidate-email-error" className="text-red-500 text-xs mt-1.5">{errors.email.message}</p>}
         </div>
 
         {/* Phone */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label htmlFor="candidate-phone" className="block text-xs font-semibold text-navy/70 mb-2">
             {tForm('phone')}
           </label>
           <input
+            id="candidate-phone"
             type="tel"
             placeholder={tForm('phonePlaceholder')}
             className="w-full px-4 py-3 rounded-lg border border-navy/15 bg-white text-navy text-sm placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-shadow"
@@ -228,10 +235,11 @@ export default function CandidateForm() {
 
         {/* Position of Interest */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+          <label htmlFor="candidate-position" className="block text-xs font-semibold text-navy/70 mb-2">
             {t('positionOfInterest')}
           </label>
           <input
+            id="candidate-position"
             type="text"
             placeholder={t('positionPlaceholder')}
             className="w-full px-4 py-3 rounded-lg border border-navy/15 bg-white text-navy text-sm placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-shadow"
@@ -242,11 +250,14 @@ export default function CandidateForm() {
 
       {/* Message */}
       <div className="mb-5">
-        <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+        <label htmlFor="candidate-message" className="block text-xs font-semibold text-navy/70 mb-2">
           {tForm('message')} <span className="text-gold">*</span>
         </label>
         <textarea
+          id="candidate-message"
           rows={4}
+          aria-invalid={Boolean(errors.message)}
+          aria-describedby={errors.message ? 'candidate-message-error' : undefined}
           placeholder={tForm('messagePlaceholder')}
           className={`w-full px-4 py-3 rounded-lg border bg-white text-navy text-sm placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-shadow resize-none ${
             errors.message ? 'border-red-400' : 'border-navy/15'
@@ -257,19 +268,20 @@ export default function CandidateForm() {
           })}
         />
         {errors.message && (
-          <p className="text-red-500 text-xs mt-1.5">{errors.message.message}</p>
+          <p id="candidate-message-error" className="text-red-500 text-xs mt-1.5">{errors.message.message}</p>
         )}
       </div>
 
       {/* Resume Upload */}
       <div className="mb-8">
-        <label className="block text-xs font-semibold text-navy/70 mb-2 uppercase tracking-wider">
+        <label htmlFor="candidate-resume" className="block text-xs font-semibold text-navy/70 mb-2">
           {t('resume')}
         </label>
         <p className="text-navy/40 text-xs mb-3">{t('resumeHint')}</p>
 
         {/* Hidden file input wired to react-hook-form + custom onChange */}
         <input
+          id="candidate-resume"
           type="file"
           accept=".pdf,.doc,.docx"
           className="sr-only"

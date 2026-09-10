@@ -1,91 +1,60 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
-
-const ease = [0.25, 0.4, 0.25, 1] as const;
-
-function fadeUp(delay: number) {
-  return {
-    initial: { opacity: 0, y: 24 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, delay, ease },
-  };
-}
+import SearchBrief from '@/components/home/SearchBrief';
+import { SEARCH_BRIEF } from '@/lib/data/site-content';
 
 export default function HeroSection() {
-  const t = useTranslations('hero');
+  const locale = useLocale();
+  const t = useTranslations('homeRedesign');
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* TODO: Replace this div with <Image src="/images/hero.jpg" alt="Hero" fill className="object-cover" priority /> when the image asset is ready */}
-      <div className="absolute inset-0 bg-navy" />
-
-      {/* Dark overlay — ensures text stays readable over the background image */}
-      <div className="absolute inset-0 bg-navy/75" />
-
-      {/* Decorative blobs */}
-      <div className="absolute top-1/4 right-[-10%] w-[500px] h-[500px] rounded-full bg-gold opacity-5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-[-10%] w-[400px] h-[400px] rounded-full bg-gold opacity-5 blur-3xl pointer-events-none" />
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-5 pointer-events-none"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
-
-      <div className="container-max relative z-10 pt-32 pb-24">
-        {/* Badge */}
-        <motion.div {...fadeUp(0.1)} className="inline-flex items-center gap-2 border border-gold/30 rounded-full px-4 py-2 mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-          <span className="text-gold text-sm font-medium tracking-wide">{t('badge')}</span>
-        </motion.div>
-
-        {/* Headline */}
-        <motion.h1 {...fadeUp(0.25)} className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6">
-          {t('title')}
-          <br />
-          <span className="text-gold">{t('titleHighlight')}</span>
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p {...fadeUp(0.4)} className="text-white/60 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
-          {t('subtitle')}
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div {...fadeUp(0.52)} className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center bg-gold text-navy font-semibold px-8 py-4 rounded-lg hover:bg-gold-light transition-colors text-sm"
+    <section className="overflow-hidden bg-navy text-white" aria-labelledby="home-hero-title">
+      <div className="container-max grid min-h-[720px] items-center gap-14 pb-20 pt-32 lg:grid-cols-12 lg:pb-24 lg:pt-36">
+        <div className="lg:col-span-6">
+          <p className="text-sm font-semibold tracking-[0.16em] text-gold-light uppercase">
+            {t('hero.sectionLabel')}
+          </p>
+          <h1
+            id="home-hero-title"
+            className="text-balance mt-6 max-w-3xl text-[clamp(2.6rem,6vw,5.6rem)] leading-[0.98] font-bold tracking-[-0.055em]"
           >
-            {t('ctaHire')}
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center border border-white/20 text-white font-medium px-8 py-4 rounded-lg hover:bg-white/5 hover:border-white/40 transition-colors text-sm"
-          >
-            {t('ctaApply')}
-          </Link>
-        </motion.div>
+            {t('hero.title')}
+          </h1>
+          <p className="mt-8 max-w-xl text-base leading-8 text-white/72 md:text-lg">
+            {t('hero.description')}
+          </p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/contact"
+              className="inline-flex min-h-12 items-center justify-center rounded-md bg-gold px-6 text-sm font-semibold text-navy transition-colors hover:bg-gold-light"
+            >
+              {t('hero.primaryCta')}
+            </Link>
+            <Link
+              href="/#process"
+              className="inline-flex min-h-12 items-center justify-center rounded-md border border-white/30 px-6 text-sm font-semibold text-white transition-colors hover:border-white/60 hover:bg-white/8"
+            >
+              {t('hero.secondaryCta')}
+            </Link>
+          </div>
+        </div>
+
+        <div className="lg:col-span-5 lg:col-start-8">
+          <SearchBrief
+            data={SEARCH_BRIEF}
+            locale={locale}
+            labels={{
+              title: t('brief.title'),
+              sample: t('brief.sample'),
+              reference: t('brief.reference'),
+              role: t('brief.role'),
+              sector: t('brief.sector'),
+              scope: t('brief.scope'),
+              status: t('brief.status'),
+            }}
+          />
+        </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.1, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30"
-      >
-        <div className="w-px h-8 bg-gradient-to-b from-transparent to-white/30" />
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-          <path d="M12 5v14M5 12l7 7 7-7" />
-        </svg>
-      </motion.div>
     </section>
   );
 }
