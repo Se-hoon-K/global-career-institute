@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { readFile } from 'node:fs/promises';
 
 import { MOCK_CANDIDATES } from '../lib/data/candidates.ts';
 import { MOCK_JOBS } from '../lib/data/jobs.ts';
@@ -34,4 +35,15 @@ test('derives dashboard metrics from the demo records', () => {
     MOCK_CANDIDATES.filter((candidate) => ['interviewing', 'offer'].includes(candidate.status)).length,
   );
   assert.equal(metrics.placements, MOCK_CANDIDATES.filter((candidate) => candidate.status === 'placed').length);
+});
+
+test('renders the dashboard as a public, clearly labelled demo', async () => {
+  const page = await readFile(new URL('../app/dashboard/page.tsx', import.meta.url), 'utf8');
+  const header = await readFile(new URL('../components/layout/Header.tsx', import.meta.url), 'utf8');
+
+  assert.doesNotMatch(page, /localStorage|DASHBOARD_PASSWORD|type="password"/);
+  assert.match(page, /Portfolio demo/);
+  assert.match(page, /Sample data/);
+  assert.match(page, /PipelineBoard/);
+  assert.match(header, /href="\/dashboard"/);
 });
