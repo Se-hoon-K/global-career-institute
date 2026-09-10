@@ -51,32 +51,36 @@ export default function CompanyForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-cream rounded-2xl border border-navy/8 p-8 md:p-10">
+    <form onSubmit={handleSubmit(onSubmit)} className="border-t border-navy/20 bg-cream p-6 sm:p-8 md:p-10">
       <h2 className="text-xl font-bold text-navy mb-8">{t('title')}</h2>
 
       <div className="grid sm:grid-cols-2 gap-5 mb-5">
         {/* Name */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2">
+          <label htmlFor="company-name" className="block text-xs font-semibold text-navy/70 mb-2">
             {t('name')} <span className="text-gold">*</span>
           </label>
           <input
+            id="company-name"
             type="text"
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby={errors.name ? 'company-name-error' : undefined}
             placeholder={t('namePlaceholder')}
             className={`w-full px-4 py-3 rounded-lg border bg-white text-navy text-sm placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-shadow ${
               errors.name ? 'border-red-400' : 'border-navy/15'
             }`}
             {...register('name', { required: t('errors.nameRequired') })}
           />
-          {errors.name && <p className="text-red-500 text-xs mt-1.5">{errors.name.message}</p>}
+          {errors.name && <p id="company-name-error" className="text-red-500 text-xs mt-1.5">{errors.name.message}</p>}
         </div>
 
         {/* Company */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2">
+          <label htmlFor="company-company" className="block text-xs font-semibold text-navy/70 mb-2">
             {t('company')}
           </label>
           <input
+            id="company-company"
             type="text"
             placeholder={t('companyPlaceholder')}
             className="w-full px-4 py-3 rounded-lg border border-navy/15 bg-white text-navy text-sm placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-shadow"
@@ -86,11 +90,14 @@ export default function CompanyForm() {
 
         {/* Email */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2">
+          <label htmlFor="company-email" className="block text-xs font-semibold text-navy/70 mb-2">
             {t('email')} <span className="text-gold">*</span>
           </label>
           <input
+            id="company-email"
             type="email"
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={errors.email ? 'company-email-error' : undefined}
             placeholder={t('emailPlaceholder')}
             className={`w-full px-4 py-3 rounded-lg border bg-white text-navy text-sm placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-shadow ${
               errors.email ? 'border-red-400' : 'border-navy/15'
@@ -103,15 +110,16 @@ export default function CompanyForm() {
               },
             })}
           />
-          {errors.email && <p className="text-red-500 text-xs mt-1.5">{errors.email.message}</p>}
+          {errors.email && <p id="company-email-error" className="text-red-500 text-xs mt-1.5">{errors.email.message}</p>}
         </div>
 
         {/* Phone */}
         <div>
-          <label className="block text-xs font-semibold text-navy/70 mb-2">
+          <label htmlFor="company-phone" className="block text-xs font-semibold text-navy/70 mb-2">
             {t('phone')}
           </label>
           <input
+            id="company-phone"
             type="tel"
             placeholder={t('phonePlaceholder')}
             className="w-full px-4 py-3 rounded-lg border border-navy/15 bg-white text-navy text-sm placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-shadow"
@@ -122,11 +130,14 @@ export default function CompanyForm() {
 
       {/* Message */}
       <div className="mb-8">
-        <label className="block text-xs font-semibold text-navy/70 mb-2">
+        <label htmlFor="company-message" className="block text-xs font-semibold text-navy/70 mb-2">
           {t('message')} <span className="text-gold">*</span>
         </label>
         <textarea
+          id="company-message"
           rows={5}
+          aria-invalid={Boolean(errors.message)}
+          aria-describedby={errors.message ? 'company-message-error' : undefined}
           placeholder={t('messagePlaceholder')}
           className={`w-full px-4 py-3 rounded-lg border bg-white text-navy text-sm placeholder-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-shadow resize-none ${
             errors.message ? 'border-red-400' : 'border-navy/15'
@@ -136,7 +147,7 @@ export default function CompanyForm() {
             minLength: { value: 10, message: t('errors.messageMin') },
           })}
         />
-        {errors.message && <p className="text-red-500 text-xs mt-1.5">{errors.message.message}</p>}
+        {errors.message && <p id="company-message-error" className="text-red-500 text-xs mt-1.5">{errors.message.message}</p>}
       </div>
 
       <button

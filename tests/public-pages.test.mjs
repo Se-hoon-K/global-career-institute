@@ -33,3 +33,18 @@ test('about and contact pages use the shared editorial page introduction', async
   assert.doesNotMatch(about, /Photo placeholder|>Photo</);
   assert.match(contact, /PageIntro/);
 });
+
+test('active inquiry forms expose explicit label bindings and avoid watch-based reads', async () => {
+  const [company, candidate] = await Promise.all([
+    source('components/contact/CompanyForm.tsx'),
+    source('components/contact/CandidateForm.tsx'),
+  ]);
+
+  for (const field of ['name', 'email', 'phone', 'message']) {
+    assert.match(company, new RegExp(`htmlFor="company-${field}"`));
+    assert.match(company, new RegExp(`id="company-${field}"`));
+    assert.match(candidate, new RegExp(`htmlFor="candidate-${field}"`));
+    assert.match(candidate, new RegExp(`id="candidate-${field}"`));
+  }
+  assert.doesNotMatch(candidate, /\bwatch\b/);
+});

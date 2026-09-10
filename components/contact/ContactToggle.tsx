@@ -33,11 +33,11 @@ export default function ContactToggle({ value, onChange, className }: ContactTog
   const t = useTranslations('contactPage.toggle');
 
   return (
-    <div className={`flex rounded-full border border-navy/15 bg-white p-1 gap-1${className ? ` ${className}` : ''}`}>
+    <div className={`flex border border-navy/15 bg-white p-1 gap-1${className ? ` ${className}` : ''}`}>
       <button
         type="button"
         onClick={() => onChange('company')}
-        className={`flex-1 py-2.5 px-6 rounded-full text-sm font-medium transition-all flex items-center justify-center gap-2 ${
+        className={`flex flex-1 items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium transition-colors ${
           value === 'company'
             ? 'bg-navy text-white shadow-sm'
             : 'text-navy/50 hover:text-navy'
@@ -50,7 +50,7 @@ export default function ContactToggle({ value, onChange, className }: ContactTog
       <button
         type="button"
         onClick={() => onChange('candidate')}
-        className={`flex-1 py-2.5 px-6 rounded-full text-sm font-medium transition-all flex items-center justify-center gap-2 ${
+        className={`flex flex-1 items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium transition-colors ${
           value === 'candidate'
             ? 'bg-navy text-white shadow-sm'
             : 'text-navy/50 hover:text-navy'

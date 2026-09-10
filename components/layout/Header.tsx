@@ -29,6 +29,7 @@ export default function Header() {
   };
 
   const isActive = (href: string) => {
+    if (href.includes('#')) return false;
     const route = href.split('#')[0];
     if (route === '/') return pathname === '/';
     return pathname.startsWith(route);

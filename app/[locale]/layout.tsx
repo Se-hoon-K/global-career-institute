@@ -8,9 +8,9 @@ import Footer from '@/components/layout/Footer';
 import '../globals.css';
 
 export const metadata: Metadata = {
-  title: 'Global Career Institute | Professional Headhunting',
+  title: 'Global Career Institute | Executive & Professional Search',
   description:
-    'Global Career Institute connects companies with exceptional talent. Professional headhunting and executive search services.',
+    'Direct search for executive and business-critical talent across luxury, retail, industrial, manufacturing, corporate, and research functions.',
 };
 
 export default async function LocaleLayout({
