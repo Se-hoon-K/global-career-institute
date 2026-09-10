@@ -1,126 +1,58 @@
-'use client';
-
-import { useState, useEffect, FormEvent } from 'react';
-import { MOCK_JOBS } from '@/lib/data/jobs';
 import { MOCK_CANDIDATES } from '@/lib/data/candidates';
-import StatsPanel from '@/components/dashboard/StatsPanel';
-import JobsTable from '@/components/dashboard/JobsTable';
-import CandidatesTable from '@/components/dashboard/CandidatesTable';
-
-const STORAGE_KEY = 'gci_admin_token';
+import { MOCK_JOBS } from '@/lib/data/jobs';
+import { buildPipeline, getDashboardMetrics } from '@/lib/data/dashboard';
+import DashboardMetrics from '@/components/dashboard/DashboardMetrics';
+import PipelineBoard from '@/components/dashboard/PipelineBoard';
+import RecentActivity from '@/components/dashboard/RecentActivity';
+import SearchPortfolio from '@/components/dashboard/SearchPortfolio';
 
 export default function DashboardPage() {
-  const [authState, setAuthState] = useState<'loading' | 'authed' | 'unauthed'>('loading');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    const expected = process.env.NEXT_PUBLIC_DASHBOARD_PASSWORD || 'admin123';
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setAuthState(stored === expected ? 'authed' : 'unauthed');
-  }, []);
-
-  function handleLogin(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const expected = process.env.NEXT_PUBLIC_DASHBOARD_PASSWORD || 'admin123';
-    if (password === expected) {
-      localStorage.setItem(STORAGE_KEY, password);
-      setAuthState('authed');
-      setError('');
-    } else {
-      setError('Incorrect password. Please try again.');
-    }
-  }
-
-  if (authState === 'loading') return null;
-
-  if (authState === 'unauthed') {
-    return (
-      <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center">
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-md p-8 w-full max-w-sm">
-          {/* Logo */}
-          <div className="flex flex-col items-center mb-8">
-            <div className="w-12 h-12 bg-navy rounded-xl flex items-center justify-center mb-3">
-              <div className="w-7 h-7 bg-gold rounded flex items-center justify-center">
-                <span className="text-navy font-bold text-xs">GCI</span>
-              </div>
-            </div>
-            <h1 className="text-xl font-bold text-navy">Dashboard Access</h1>
-            <p className="text-sm text-navy/50 mt-1">Enter your admin password to continue</p>
-          </div>
-
-          <form onSubmit={handleLogin} className="flex flex-col gap-4">
-            <div>
-              <label htmlFor="password" className="block text-xs font-semibold text-navy/60 mb-1.5">
-                Password
-              </label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password"
-                required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm text-navy placeholder:text-navy/30 focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-colors"
-              />
-            </div>
-
-            {error && (
-              <p className="text-xs text-red-600 bg-red-50 border border-red-100 rounded-lg px-3 py-2">
-                {error}
-              </p>
-            )}
-
-            <button
-              type="submit"
-              className="w-full bg-gold hover:bg-gold-dark text-navy font-semibold text-sm py-2.5 rounded-lg transition-colors"
-            >
-              Access Dashboard
-            </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
-
-  // Compute stats
-  const activeJobs = MOCK_JOBS.filter((j) => j.status === 'active').length;
-  const totalCandidates = MOCK_CANDIDATES.length;
-  const currentMonth = new Date().getMonth();
-  const placedThisMonth = MOCK_CANDIDATES.filter((c) => {
-    return c.status === 'placed' && new Date(c.appliedDate).getMonth() === currentMonth;
-  }).length;
+  const metrics = getDashboardMetrics(MOCK_JOBS, MOCK_CANDIDATES);
+  const pipeline = buildPipeline(MOCK_CANDIDATES);
 
   return (
-    <div>
-      <div className="mb-8 flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-navy">GCI Dashboard</h1>
-          <p className="text-sm text-navy/50 mt-0.5">Internal recruitment management</p>
+    <div className="space-y-10">
+      <header id="overview" className="scroll-mt-8 border-b border-navy/15 pb-8">
+        <div className="flex flex-col gap-6 xl:flex-row xl:items-end xl:justify-between">
+          <div>
+            <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
+              <span className="border border-gold-dark/30 bg-gold/10 px-2.5 py-1 text-gold-dark">Portfolio demo</span>
+              <span className="border border-navy/15 bg-white px-2.5 py-1 text-ink/60">Sample data</span>
+            </div>
+            <p className="mt-7 text-sm font-semibold text-gold-dark">Recruiting operations</p>
+            <h1 className="mt-2 text-balance text-3xl font-bold tracking-[-0.04em] text-navy md:text-5xl">Candidate CRM</h1>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-ink/65 md:text-base">
+              A read-only product demonstration of direct-search pipeline management, from first research through placement.
+            </p>
+          </div>
+          <div className="text-sm text-ink/60 xl:text-right">
+            <p className="font-semibold text-navy">APAC Search Team</p>
+            <p className="mt-1">Updated September 10, 2026</p>
+          </div>
         </div>
-        <button
-          onClick={() => {
-            localStorage.removeItem(STORAGE_KEY);
-            setAuthState('unauthed');
-          }}
-          className="text-xs text-navy/40 hover:text-navy/70 transition-colors"
-        >
-          Sign out
-        </button>
+      </header>
+
+      <DashboardMetrics {...metrics} />
+
+      <section id="pipeline" className="scroll-mt-8" aria-labelledby="pipeline-title">
+        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold text-gold-dark">Candidate pipeline</p>
+            <h2 id="pipeline-title" className="mt-1 text-2xl font-bold tracking-[-0.025em] text-navy">Search progress by stage</h2>
+          </div>
+          <p className="text-xs text-ink/50">Scroll horizontally to review all six stages</p>
+        </div>
+        <PipelineBoard pipeline={pipeline} jobs={MOCK_JOBS} />
+      </section>
+
+      <div className="grid gap-5 xl:grid-cols-[1.45fr_0.75fr]">
+        <SearchPortfolio jobs={MOCK_JOBS} candidates={MOCK_CANDIDATES} />
+        <RecentActivity candidates={MOCK_CANDIDATES} />
       </div>
 
-      <StatsPanel
-        activeJobs={activeJobs}
-        totalCandidates={totalCandidates}
-        placedThisMonth={placedThisMonth}
-        clientSatisfaction="98%"
-      />
-
-      <div className="mt-8 flex flex-col gap-8">
-        <JobsTable jobs={MOCK_JOBS} />
-        <CandidatesTable candidates={MOCK_CANDIDATES} />
-      </div>
+      <footer className="border-t border-navy/15 py-6 text-xs leading-6 text-ink/50">
+        This dashboard is a portfolio demonstration. Names and operational records are fictional sample data.
+      </footer>
     </div>
   );
 }

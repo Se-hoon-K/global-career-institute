@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import NextLink from 'next/link';
 import { Link, usePathname, useRouter } from '@/i18n/navigation';
 
 export default function Header() {
@@ -61,6 +62,9 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+            <NextLink href="/dashboard" className="text-[13px] font-medium text-gold-light transition-colors hover:text-white">
+              {t('dashboardDemo')}
+            </NextLink>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -129,6 +133,9 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+            <NextLink href="/dashboard" onClick={() => setMobileOpen(false)} className="border-b border-white/10 px-1 py-3.5 text-sm font-medium text-gold-light">
+              {t('dashboardDemo')}
+            </NextLink>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="mt-4 flex justify-center rounded-md bg-gold px-5 py-3.5 text-sm font-semibold text-navy">
               {t('consultation')}
             </Link>
